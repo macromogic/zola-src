@@ -9,7 +9,7 @@ I am now a Ph.D. student in *Computer Science* at [Rice University](https://www.
 My research focuses on **system security** (*intra-process isolation*, *dynamic program analysis*, etc).
 Before entering Rice, I obtained my B.Eng. degree in *Computer Science and Engineering* at [Southern University of Science and Technology](https://www.sustech.edu.cn) in 2022.
 
-Please no not expect too much of computer science stuff in my posts. 
+Please do not expect too much of computer science stuff in my posts. 
 I would rather drop some math notes or random thoughts (occasionally, since I am not a good writer either).
 
 I am learning to compose some music.
