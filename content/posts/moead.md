@@ -24,7 +24,7 @@ $$
 Tchebycheff法基于一个参考向量$\mathbf{z}$和一个权重向量$\boldsymbol{\lambda}$，其中$\mathbf{z}$每个分量为决策空间中对应分量上的最值。对应的目标函数为该解到$\mathbf{z}$的“加权Tchebycheff距离”，即：
 
 $$
-g^{\mathrm{te}}(\mathbf{x} \mid \boldsymbol{\lambda}, \mathbf{z}) = \max_{1 \leq i \leq n} \{ \lambda_i \left\lvert F_i(\mathbf{x}) - z_i \right\rvert \}
+g^{\mathrm{te}}(\mathbf{x} \mid \boldsymbol{\lambda}, \mathbf{z}) = \max_{1 \leq i \leq n} \\{ \lambda_i \left\lvert F_i(\mathbf{x}) - z_i \right\rvert \\}
 $$
 
 BI法同样需要参考向量$\mathbf{z}$和权重向量$\boldsymbol{\lambda}$，其目的是尽可能将答案向$\mathbf{z}$的方向“拉拽”，因而对应的目标函数为：

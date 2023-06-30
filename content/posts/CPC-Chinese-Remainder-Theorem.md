@@ -27,11 +27,11 @@ x_S = \sum_{i=1}^{n} a_it_iM_i + kM,\ k \in \mathbb{Z}
 $$
 **证明**
 
-由假设，$\forall j \in \{1, 2, \dots, n\},\ \gcd(m_i, M_i) = 1$，则由Bezout定理可推知，$\exists t_i \text{ s.t. } t_iM_i \equiv 1 \pmod {m_i}$，即$M_i$存在模$m_i$意义下的数论倒数$t_i$。
+由假设，$\forall j \in \\{1, 2, \dots, n\\},\ \gcd(m_i, M_i) = 1$，则由Bezout定理可推知，$\exists t_i \text{ s.t. } t_iM_i \equiv 1 \pmod {m_i}$，即$M_i$存在模$m_i$意义下的数论倒数$t_i$。
 
-考虑乘积$a_it_iM_i$可知：$a_it_iM_i \equiv a_i \pmod {m_i};\ $$a_jt_jM_j \equiv 0 \pmod {m_i}, $$\forall j \in \{1, 2, \dots, n\}, j \neq i$，所以令$x = \sum\limits_{i=1}^{n} a_it_iM_i$，则有$x \equiv a_i \pmod {m_i}, \forall i \in \{1, 2, \dots, n\}$。
+考虑乘积$a_it_iM_i$可知：$a_it_iM_i \equiv a_i \pmod {m_i};\ $$a_jt_jM_j \equiv 0 \pmod {m_i}, $$\forall j \in \\{1, 2, \dots, n\\}, j \neq i$，所以令$x = \sum\limits_{i=1}^{n} a_it_iM_i$，则有$x \equiv a_i \pmod {m_i}, \forall i \in \\{1, 2, \dots, n\\}$。
 
-假设$x_1, x_2$为该方程的两个解，由于模数两两互质，有$M \mid (x_1-x_2)$，即任意两个整数解必然相差$M$的整数倍，故解集为$\{\sum\limits_{i=1}^{n} a_it_iM_i + kM \mid k \in \mathbb{Z}\}$。
+假设$x_1, x_2$为该方程的两个解，由于模数两两互质，有$M \mid (x_1-x_2)$，即任意两个整数解必然相差$M$的整数倍，故解集为$\\{\sum\limits_{i=1}^{n} a_it_iM_i + kM \mid k \in \mathbb{Z}\\}$。
 
 
 ## 模数不两两互质的情形
@@ -40,7 +40,7 @@ $$
 
 先提出以下引理：
 
-**引理1** 方程组有解的充要条件是$\forall i, j \in \{1, 2, \dots, n\}, i \neq j,\ $$\gcd(m_i, m_j) \mid (b_i-b_j)$。
+**引理1** 方程组有解的充要条件是$\forall i, j \in \\{1, 2, \dots, n\\}, i \neq j,\ $$\gcd(m_i, m_j) \mid (b_i-b_j)$。
 
 **证明**
 

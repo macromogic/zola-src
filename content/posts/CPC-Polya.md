@@ -107,4 +107,4 @@ $S_n$的任意一个子群称为**置换群**。
 $$
 L=\frac{1}{|\overline G|}\sum_{i=1}^{g}m^{c(\overline{P_i})}
 $$
-其中$\overline G=\{\overline{P_1}, \overline{P_2}, \dots, \overline{P_g}\}$，$c(\overline{P_k})$为$\overline{P_k}$的循环节数。
+其中$\overline G=\\{\overline{P_1}, \overline{P_2}, \dots, \overline{P_g}\\}$，$c(\overline{P_k})$为$\overline{P_k}$的循环节数。

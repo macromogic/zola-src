@@ -21,7 +21,7 @@ $G = (V, E)$是有向、无平行边的图，每条边边权为正，其中有�
 
 <!-- more -->
 
-若某点集$A \subseteq V$，规定$E\_A^- = (A \times (V \setminus A)) \cap E, E\_A^+ = ((V \setminus A) \times A) \cap E$，即$E\_A^-, E\_A^+$分别表示“**离开**$A$”和“**到达**$A$”的边集。相似地，对于某一节点$v \in V$，记$E\_v^- = (\{v\} \times (V \setminus \{v\})) \cap E, E\_v^+ = ((V \setminus \{v\}) \times \{v\}) \cap E$。
+若某点集$A \subseteq V$，规定$E\_A^- = (A \times (V \setminus A)) \cap E, E\_A^+ = ((V \setminus A) \times A) \cap E$，即$E\_A^-, E\_A^+$分别表示“**离开**$A$”和“**到达**$A$”的边集。相似地，对于某一节点$v \in V$，记$E\_v^- = (\\{v\\} \times (V \setminus \\{v\\})) \cap E, E\_v^+ = ((V \setminus \\{v\\}) \times \\{v\\}) \cap E$。
 
 $A \sqcup B$表示两个集合$A, B$的**不交并**。
 
@@ -37,7 +37,7 @@ $A \sqcup B$表示两个集合$A, B$的**不交并**。
 
 - $\forall e \in E,\ 0 \leq f(e) \leq c(e)$，其中$c(e)$又称该边的**容量**（capacity）；
 
-- $\forall v \in V \setminus \{s, t\},\ \sum\_{e \in E\_v^+} f(e) = \sum\_{e \in E\_v^-} f(e)$（**流量守恒，Flow Conservation**）
+- $\forall v \in V \setminus \\{s, t\\},\ \sum\_{e \in E\_v^+} f(e) = \sum\_{e \in E\_v^-} f(e)$（**流量守恒，Flow Conservation**）
 
   称$f$为网络流图$G$的一个**流**（flow）。其**流量**（flow value）定义为$v(f) = \sum\_{e \in E\_s^-} f(e)$。
 
@@ -83,7 +83,7 @@ c\_f(e^R) &= f(e)
 $$
 为保证剩余图依然是一张网络流图，规定$e$或$e^R$在$E\_f$中当且仅当其容量非零。即：
 $$
-E\_f = \{e \in E \mid f(e) < c(e)\} \cup \{e^R \mid e \in E, f(e) > 0 \}
+E\_f = \\{e \in E \mid f(e) < c(e)\\} \cup \\{e^R \mid e \in E, f(e) > 0 \\}
 $$
 若$s, t$在$G\_f$中依然连通，连接这两个节点的简单路径称为**增广路径**（augmenting path）或**增广路**。增广路上最小的剩余边容量称为**瓶颈容量**（bottleneck capacity），记作$c\_b(G\_f, p)$。若$f$是$G$上的一个流，而$p$是$G\_f$上一条增广路，那么将$p$加入（augment to）$f$中得到$f’$，有$v(f’) = v(f)+c\_b(G\_f, p)$。
 这条性质称作增广路的**主要特性**（Key Property）。一般地，若$f$是$G$上的一个流，而$g$是$G\_f$上的一个流，那么$f+g$是$G$上的一个流，其中$v(f+g) = v(f) + v(g)$，对任意$e \in E$，有$(f+g)(e) = f(e) + g(e) - g(e^R)$。
@@ -138,15 +138,15 @@ $$
 
 要想提高寻找增广路并且求得最大流的效率，一个直观的思路就是找到尽可能“_短且胖_”（即遍数少、瓶颈容量大）的增广路径。
 
-首先，对于某一容量$\Delta$，令$G\_f(\Delta)$表示剩余图中边容量不小于$\Delta$的部分，即$G\_f(\Delta) = (V, E\_f(\Delta))$，其中$E\_f(\Delta) = \{e \in E\_f \mid c\_f(e) \geq \Delta\}$。观察到：$G\_f(\Delta)$中任一增广路的容量一定大于等于$\Delta$，因而我们可以维护这个$\Delta$（称为**缩放因子，scaling parameter**），当$G\_f(\Delta)$中不存在增广路时缩小$\Delta$值，直到$\Delta$为$1$为止，此时得到的流就是我们要求的最大流（$G\_f(1)$不存在增广路等价于$G\_f$不存在增广路，则由**增广路定理**显然可得）。
+首先，对于某一容量$\Delta$，令$G\_f(\Delta)$表示剩余图中边容量不小于$\Delta$的部分，即$G\_f(\Delta) = (V, E\_f(\Delta))$，其中$E\_f(\Delta) = \\{e \in E\_f \mid c\_f(e) \geq \Delta\\}$。观察到：$G\_f(\Delta)$中任一增广路的容量一定大于等于$\Delta$，因而我们可以维护这个$\Delta$（称为**缩放因子，scaling parameter**），当$G\_f(\Delta)$中不存在增广路时缩小$\Delta$值，直到$\Delta$为$1$为止，此时得到的流就是我们要求的最大流（$G\_f(1)$不存在增广路等价于$G\_f$不存在增广路，则由**增广路定理**显然可得）。
 
-现实中，为提高运行效率，一般令$\Delta$初值为**不超过$\max\_{e \in E\_s^-}\{c(e)\}$的**最大的$2$的幂，每次缩放时将$\Delta$减半，则$\Delta$始终为$2$的某一次方，显然也满足上文提到的**整性不变性**。
+现实中，为提高运行效率，一般令$\Delta$初值为**不超过$\max\_{e \in E\_s^-}\\{c(e)\\}$的**最大的$2$的幂，每次缩放时将$\Delta$减半，则$\Delta$始终为$2$的某一次方，显然也满足上文提到的**整性不变性**。
 
 下面提出三个引理：
 
 *引理1*：该方法中有$1+\left\lfloor \log\_2 C \right\rfloor$次迭代，其中$C$为上文**有穷性**处提到的迭代上界。
 
-*证明*：由题目假设，显然有$\Delta \leq \max\_{e \in E\_s^-}\{c(e)\} \leq v(f^*) \leq C$，则缩放阶段数为$1+\left\lfloor \log\_2 \Delta \right\rfloor \leq 1+\left\lfloor \log\_2 C \right\rfloor$。
+*证明*：由题目假设，显然有$\Delta \leq \max\_{e \in E\_s^-}\\{c(e)\\} \leq v(f^*) \leq C$，则缩放阶段数为$1+\left\lfloor \log\_2 \Delta \right\rfloor \leq 1+\left\lfloor \log\_2 C \right\rfloor$。
 
 *引理2*：令$f$为一次迭代结束时的流（即，此时$G\_f(\Delta)$不存在增广路），则$v(f^*) \leq v(f) + m\Delta$。
 
