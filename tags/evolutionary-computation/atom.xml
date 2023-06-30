@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Macromogic - Evolutionary Computation</title>
+    <link href="https://macromogic.xyz/tags/evolutionary-computation/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://macromogic.xyz"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-02-18T00:00:00+00:00</updated>
+    <id>https://macromogic.xyz/tags/evolutionary-computation/atom.xml</id>
+    <entry xml:lang="en">
+        <title>演化多目标优化：基于分解思想的经典算法MOEA&#x2F;D</title>
+        <published>2021-02-18T00:00:00+00:00</published>
+        <updated>2021-02-18T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/moead/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/moead/</id>
+        
+        <summary type="html">&lt;h2 id=&quot;qian-yan&quot;&gt;前言&lt;&#x2F;h2&gt;
+&lt;p&gt;在多目标优化问题中，基于帕累托支配关系的最优解集（即帕累托前沿，PF）很可能不是有限的集合；多数情况下可能是高维空间中某一区域。因此，优化算法的目标就是在有限时间里得到一个能够表现出PF的形状、且分布良好的解集。这也是为什么收敛性和多样性在演化多目标优化算法中是两大重要指标。经典的基于支配关系的算法框架（如&lt;a href=&quot;https:&#x2F;&#x2F;macromogic.xyz&#x2F;posts&#x2F;nsga-ii&#x2F;&quot;&gt;NSGA-II&lt;&#x2F;a&gt;等）依靠适应值来维护解集的多样性，避免边缘解的丢失以及解过于密集的现象。而MOEA&#x2F;D的提出，将分解的思想重新带入了演化多目标优化的领域来。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>遗传算法中经典的交叉&#x2F;变异算子</title>
+        <published>2021-02-09T00:00:00+00:00</published>
+        <updated>2021-02-09T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/ga-cross-mutate/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/ga-cross-mutate/</id>
+        
+        <summary type="html">&lt;p&gt;在遗传算法中，如何从亲代中产生好的子代个体是至关重要的问题。本文将收录一些经典的、但理解起来略有难度的交叉和变异算子（Crossover and mutation operators），并简要叙述一下其背后的原理。&lt;&#x2F;p&gt;
+&lt;p&gt;本文中各种算子的中文名称均为个人直译结果，不代表学术界公认译名（本来也基本没有……）。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>演化多目标优化：基于支配的经典算法NSGA-II</title>
+        <published>2021-02-05T00:00:00+00:00</published>
+        <updated>2021-02-05T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/nsga-ii/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/nsga-ii/</id>
+        
+        <summary type="html">&lt;p&gt;最近在学习并尝试实现演化多目标优化的相关算法，希望我能通过这篇博客把算法了解得更加透彻orz&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ji-chu-pian&quot;&gt;基础篇&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;pa-lei-tuo-zhi-pei&quot;&gt;帕累托支配&lt;&#x2F;h3&gt;
+&lt;p&gt;在多目标优化领域，一般来说，决策变量和目标都是由多个元素组成的，而不同目标之间往往难以比较。如果将决策&#x2F;目标视作一个向量$\mathbf{x}$，我们用**帕累托支配（Pareto dominance）**来刻画向量间的关系。对于两个$n$维向量$\mathbf{x}^{(1)} = (x^{(1)}_1, \dots, x^{(1)}_n)^T, \mathbf{x}^{(2)} = (x^{(2)}_1, \dots, x^{(2)}_n)^T$，我们称$\mathbf{x}^{(1)}$支配$\mathbf{x}^{(2)}$（记作$\mathbf{x}^{(1)} \prec \mathbf{x}^{(2)}$）当且仅当$\forall 1 \leq i \leq n,\ x^{(1)}_i \leq x^{(2)}_i$，且$\exists 1 \leq i \leq n,\ x^{(1)}_i &amp;lt; x^{(2)}_i$。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+</feed>

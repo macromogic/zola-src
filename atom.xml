@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Macromogic</title>
+    <link href="https://macromogic.xyz/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://macromogic.xyz"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-02-18T00:00:00+00:00</updated>
+    <id>https://macromogic.xyz/atom.xml</id>
+    <entry xml:lang="en">
+        <title>演化多目标优化：基于分解思想的经典算法MOEA&#x2F;D</title>
+        <published>2021-02-18T00:00:00+00:00</published>
+        <updated>2021-02-18T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/moead/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/moead/</id>
+        
+        <summary type="html">&lt;h2 id=&quot;qian-yan&quot;&gt;前言&lt;&#x2F;h2&gt;
+&lt;p&gt;在多目标优化问题中，基于帕累托支配关系的最优解集（即帕累托前沿，PF）很可能不是有限的集合；多数情况下可能是高维空间中某一区域。因此，优化算法的目标就是在有限时间里得到一个能够表现出PF的形状、且分布良好的解集。这也是为什么收敛性和多样性在演化多目标优化算法中是两大重要指标。经典的基于支配关系的算法框架（如&lt;a href=&quot;https:&#x2F;&#x2F;macromogic.xyz&#x2F;posts&#x2F;nsga-ii&#x2F;&quot;&gt;NSGA-II&lt;&#x2F;a&gt;等）依靠适应值来维护解集的多样性，避免边缘解的丢失以及解过于密集的现象。而MOEA&#x2F;D的提出，将分解的思想重新带入了演化多目标优化的领域来。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>遗传算法中经典的交叉&#x2F;变异算子</title>
+        <published>2021-02-09T00:00:00+00:00</published>
+        <updated>2021-02-09T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/ga-cross-mutate/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/ga-cross-mutate/</id>
+        
+        <summary type="html">&lt;p&gt;在遗传算法中，如何从亲代中产生好的子代个体是至关重要的问题。本文将收录一些经典的、但理解起来略有难度的交叉和变异算子（Crossover and mutation operators），并简要叙述一下其背后的原理。&lt;&#x2F;p&gt;
+&lt;p&gt;本文中各种算子的中文名称均为个人直译结果，不代表学术界公认译名（本来也基本没有……）。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>演化多目标优化：基于支配的经典算法NSGA-II</title>
+        <published>2021-02-05T00:00:00+00:00</published>
+        <updated>2021-02-05T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/nsga-ii/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/nsga-ii/</id>
+        
+        <summary type="html">&lt;p&gt;最近在学习并尝试实现演化多目标优化的相关算法，希望我能通过这篇博客把算法了解得更加透彻orz&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ji-chu-pian&quot;&gt;基础篇&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;pa-lei-tuo-zhi-pei&quot;&gt;帕累托支配&lt;&#x2F;h3&gt;
+&lt;p&gt;在多目标优化领域，一般来说，决策变量和目标都是由多个元素组成的，而不同目标之间往往难以比较。如果将决策&#x2F;目标视作一个向量$\mathbf{x}$，我们用**帕累托支配（Pareto dominance）**来刻画向量间的关系。对于两个$n$维向量$\mathbf{x}^{(1)} = (x^{(1)}_1, \dots, x^{(1)}_n)^T, \mathbf{x}^{(2)} = (x^{(2)}_1, \dots, x^{(2)}_n)^T$，我们称$\mathbf{x}^{(1)}$支配$\mathbf{x}^{(2)}$（记作$\mathbf{x}^{(1)} \prec \mathbf{x}^{(2)}$）当且仅当$\forall 1 \leq i \leq n,\ x^{(1)}_i \leq x^{(2)}_i$，且$\exists 1 \leq i \leq n,\ x^{(1)}_i &amp;lt; x^{(2)}_i$。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>线性代数复习：置换矩阵和“名次向量”</title>
+        <published>2021-02-04T00:00:00+00:00</published>
+        <updated>2021-02-04T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/permutation-rank/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/permutation-rank/</id>
+        
+        <summary type="html">&lt;p&gt;没事瞎水博客系列……&lt;&#x2F;p&gt;
+&lt;p&gt;在日常处理矩阵的时候，有时我们希望在不更改矩阵的前提下获知其每一行&#x2F;列的字典序“&lt;strong&gt;名次&lt;&#x2F;strong&gt;”（rank）。MATLAB&#x2F;NumPy分别提供了&lt;code&gt;sortrows&lt;&#x2F;code&gt;&#x2F;&lt;code&gt;argsort&lt;&#x2F;code&gt;方法来获得一个“&lt;strong&gt;索引向量&lt;&#x2F;strong&gt;”（index vector），表示排序后的矩阵的每一行&#x2F;列对应原矩阵的行&#x2F;列号。只需对索引向量再做一次排序，便可得到对应的”&lt;strong&gt;名次向量&lt;&#x2F;strong&gt;“（rank vector）。对应MATLAB代码大致如下：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;matlab&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-matlab &quot;&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span&gt;[~, index] = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;sortrows&lt;&#x2F;span&gt;&lt;span&gt;(matrix);
+&lt;&#x2F;span&gt;&lt;span&gt;[~, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;rank&lt;&#x2F;span&gt;&lt;span&gt;] = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;sort&lt;&#x2F;span&gt;&lt;span&gt;(index);
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;为了深入理解这个操作背后的原理，我参考了StackExchange上的&lt;a href=&quot;https:&#x2F;&#x2F;math.stackexchange.com&#x2F;questions&#x2F;3607762&#x2F;why-does-sorting-twice-produce-a-rank-vector&quot;&gt;这篇回答&lt;&#x2F;a&gt;。从他的证明过程中我发现了一个关键：排序前后两个矩阵的关系可以用&lt;strong&gt;排列&#x2F;置换&lt;&#x2F;strong&gt;（permutation）来刻画。下面我将站在线性代数的视角来系统化解释一下“名次向量”背后的原理。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>算法复习笔记：网络流</title>
+        <published>2020-08-11T00:00:00+00:00</published>
+        <updated>2020-08-11T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/max-flow/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/max-flow/</id>
+        
+        <summary type="html">&lt;p&gt;龟速补上欠下的账ing……$\DeclareMathOperator{\capa}{cap}$&lt;&#x2F;p&gt;
+&lt;p&gt;写完发现读着好晦涩，但数学不就是这样的吗🌚&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ji-ben-gai-nian-fu-hao-biao-shi&quot;&gt;基本概念&#x2F;符号表示&lt;&#x2F;h2&gt;
+&lt;p&gt;为了方便下文叙述，现做如下规定&#x2F;定义：&lt;&#x2F;p&gt;
+&lt;p&gt;$G = (V, E)$是有向、无平行边的图，每条边边权为正，其中有一个&lt;strong&gt;源点&lt;&#x2F;strong&gt;（source）$s$和&lt;strong&gt;汇点&lt;&#x2F;strong&gt;（sink）$t$满足：没有一条边以$t$为起点，或以$s$为终点。&lt;&#x2F;p&gt;
+&lt;p&gt;对某边$e \in E$，记该边边权为$c(e)$。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>算法复习笔记：多项式凭什么能FFT？</title>
+        <published>2020-06-23T00:00:00+00:00</published>
+        <updated>2020-06-23T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/fft/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/fft/</id>
+        
+        <summary type="html">&lt;h2 id=&quot;xie-zai-qian-mian&quot;&gt;写在前面&lt;&#x2F;h2&gt;
+&lt;p&gt;本文仅面向学习FFT算法的&lt;strong&gt;CS学生&lt;&#x2F;strong&gt;。文中关于傅里叶变换的阐述仅用于帮助&lt;strong&gt;快速简要&lt;&#x2F;strong&gt;地理解算法背后时域&#x2F;频域变换的意义，逻辑性不会像「信号与系统」课那么强。本人没系统学过「信号与系统」这门课，能写出这篇文章也要感谢来自FDU、SCUT的两位同学的帮助。欢迎各位大佬对本文内容进行指正！&lt;&#x2F;p&gt;
+&lt;p&gt;要系统学习「信号与系统」的内容，可参阅&lt;strong&gt;奥本海默&lt;&#x2F;strong&gt;著的《信号与系统》一书。&lt;&#x2F;p&gt;
+&lt;p&gt;在我学习FFT时，第一个面对的问题背景是**「给定两个多项式，如何快速求得二者的乘积？」&lt;strong&gt;老师或者博客会先介绍&lt;&#x2F;strong&gt;多项式的系数表示和点值表示**（在下一节也会再啰嗦一遍），然后引入&lt;strong&gt;单位根&lt;&#x2F;strong&gt;和&lt;strong&gt;分治&lt;&#x2F;strong&gt;思想来实现两种表示法间的转换。&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;31584464&quot;&gt;这篇专栏&lt;&#x2F;a&gt;对算法内容及前置知识的讲解算是非常详尽的了，但它并没有解决一个问题：傅里叶变换的本质是将时域上的卷积转化成频域上的乘法，那么多项式的系数&#x2F;点值表示为什么能和信号的时域&#x2F;频域对应？本文将从&lt;strong&gt;偏向EE&lt;&#x2F;strong&gt;的角度来探讨这个算法，并尝试揭示其中的关联。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>算法复习笔记：贪心求最优Caching策略</title>
+        <published>2020-06-15T00:00:00+00:00</published>
+        <updated>2020-06-15T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/ff-cache/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/ff-cache/</id>
+        
+        <summary type="html">&lt;p&gt;题目来自Algorithm design &#x2F; Jon Kleinberg, Eva Tardos.—1st ed. 的4.3节。&lt;&#x2F;p&gt;
+&lt;p&gt;参考文章：&lt;a href=&quot;http:&#x2F;&#x2F;notebook.xyli.me&#x2F;CS161&#x2F;Intro-to-greedy-algo1&#x2F;&quot;&gt;http:&#x2F;&#x2F;notebook.xyli.me&#x2F;CS161&#x2F;Intro-to-greedy-algo1&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;wen-ti-bei-jing&quot;&gt;问题背景&lt;&#x2F;h2&gt;
+&lt;p&gt;假设现在有一个容量为$k$的缓存（cache）空间，和$m$个内存block访问请求$d_1, d_2, \dots, d_m$。对于第$i$个请求$d_i$，如果请求的block在缓存中，称其为一次&lt;strong&gt;命中&lt;&#x2F;strong&gt;（hit），否则称其为一次&lt;strong&gt;失效&#x2F;缺页&lt;&#x2F;strong&gt;（miss）。若出现miss，则需要从内存中读取该block并写入缓存（若缓存已满则会替换掉其中一个block）。现给定请求序列，求一个最优缓存（caching）策略使得miss尽可能少。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>码农的自我修养——插头DP</title>
+        <published>2020-03-16T00:00:00+00:00</published>
+        <updated>2020-03-16T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/plug-dp/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/plug-dp/</id>
+        
+        <summary type="html">&lt;p&gt;想不到促使我学习插头DP的动机竟然是一道算法课的Lab题，还被网上的假教程演了半天……姑且把学到的东西写一写，纪念一下我对着一屏幕的表画了大半天图的自闭时光。&lt;&#x2F;p&gt;
+&lt;p&gt;起这个标题的原因实在一篇博客里看到“&lt;strong&gt;转移过程十分码农&lt;&#x2F;strong&gt;”，敲完代码深以为然，就借用过来了。&lt;&#x2F;p&gt;
+&lt;p&gt;以下内容仅为插头DP的&lt;strong&gt;一种&lt;&#x2F;strong&gt;应用情形。若要应用于其他题目，需要对过程略作修改。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;前置知识：状态压缩DP、BFS、哈希&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>CPC算法笔记——二次剩余</title>
+        <published>2019-09-19T00:00:00+00:00</published>
+        <updated>2019-09-19T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/cpc-quadratic-residue/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/cpc-quadratic-residue/</id>
+        
+        <summary type="html">&lt;h2 id=&quot;ding-yi&quot;&gt;定义&lt;&#x2F;h2&gt;
+&lt;p&gt;一个整数$x$对另一个整数$p$的&lt;strong&gt;二次剩余&lt;&#x2F;strong&gt;，指$x^2$模$p$的余数。&lt;&#x2F;p&gt;
+&lt;p&gt;我们称整数$d$为&lt;strong&gt;模$p$的二次剩余&lt;&#x2F;strong&gt;当且仅当$\exists x \in \mathbb{Z} \mbox{ s.t. } x^2 \equiv d \pmod p$；反之，称$d$为&lt;strong&gt;模$p$的非二次剩余&lt;&#x2F;strong&gt;。&lt;&#x2F;p&gt;
+&lt;p&gt;上下文无歧义的情况下可以简称为&lt;strong&gt;剩余&lt;&#x2F;strong&gt;和&lt;strong&gt;非剩余&lt;&#x2F;strong&gt;。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>CPC算法笔记——置换和Polya定理</title>
+        <published>2019-08-28T00:00:00+00:00</published>
+        <updated>2019-08-28T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/cpc-polya/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/cpc-polya/</id>
+        
+        <summary type="html">&lt;h2 id=&quot;zhi-huan&quot;&gt;置换&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;置换&lt;&#x2F;strong&gt;即$[![1, n]!] \triangleq {1, 2, \dots, n}$到自身的1-1变换：$[![1, n]!] \rightarrow [![1, n]!]$&lt;&#x2F;p&gt;
+&lt;p&gt;$p: i \rightarrow a_i, (a_i \neq a_j, i \neq j)$，&lt;&#x2F;p&gt;
+&lt;p&gt;其中$a_1, a_2, \dots, a_n$是$[![1, n]!]$的一个&lt;strong&gt;全排列&lt;&#x2F;strong&gt;，&lt;&#x2F;p&gt;
+&lt;p&gt;称此置换为$n$阶置换，记为：&lt;&#x2F;p&gt;
+&lt;p&gt;$p=\pmatrix{1&amp;amp;2&amp;amp;\cdots&amp;amp;n\a_1&amp;amp;a_2&amp;amp;\cdots&amp;amp;a_n}$&lt;&#x2F;p&gt;
+&lt;p&gt;$n$阶置换共有$n!$个。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>CPC算法笔记——中国剩余定理</title>
+        <published>2019-08-22T00:00:00+00:00</published>
+        <updated>2019-08-22T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/cpc-chinese-remainder-theorem/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/cpc-chinese-remainder-theorem/</id>
+        
+        <summary type="html">&lt;p&gt;中国剩余定理可用于解一元线性方程组：
+$$
+\begin{cases}
+x \equiv a_1 \pmod {m_1} \
+x \equiv a_2 \pmod {m_2} \
+\quad \vdots \
+x \equiv a_n \pmod {m_n}
+\end{cases}
+$$&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+</feed>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  <link href='&#x2F;icons&#x2F;site.webmanifest' rel="manifest" />
+  
+  
+  <link color="#5bbad5" href='&#x2F;icons&#x2F;safari-pinned-tab.svg' rel="mask-icon" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-16x16.png' rel="icon" sizes="16x16" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-32x32.png' rel="icon" sizes="32x32" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;apple-touch-icon.png' rel="apple-touch-icon" sizes="180x180" />
+  
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/themes/folio/galleria.folio.min.css" integrity="sha384-+rY0QD+LRnTOquDMzGa9lXU6jIwdiQuwCJQ2cdcW0qeP/0UbjQCZlXnRsUMA+9pH" crossorigin="anonymous">
+  
+
+  
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.1/css/academicons.min.css" integrity="sha384-FIue+PI4SsI9XfHCz8dBLg33b0c1fMJgNU3X//L26FYbGnlSEfWmNT7zgWc2N9b6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link href="https://macromogic.xyz/deep-thought.css" rel="stylesheet" />
+  
+  
+
+  <title>
+    
+Macromogic | 遗传算法中经典的交叉&#x2F;变异算子
+
+  </title>
+
+  
+  
+  
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+  
+  
+</head>
+
+<body class="has-background-white">
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item is-size-5 has-text-weight-bold" href="https:&#x2F;&#x2F;macromogic.xyz">Macromogic</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;">
+            Home
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;posts">
+            Posts
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;tags">
+            Tags
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;categories">
+            Categories
+          </a>
+          
+          
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title">
+            遗传算法中经典的交叉&#x2F;变异算子
+          </h1>
+          <p class="subtitle"></p>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="fas fa-user"></i>
+  </span>
+  <span>Weijie Huang published on</span>
+  <span class="icon">
+    <i class="far fa-calendar-alt"></i>
+  </span>
+  <span><time datetime="2021-02-09">February 09, 2021</time></span>
+</span>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="far fa-clock"></i>
+  </span>
+  <span>7 min,</span>
+  <span class="icon">
+    <i class="fas fa-pencil-alt"></i>
+  </span>
+  <span>1385 words</span>
+</span>
+
+            </div>
+            <div class="column">
+              
+              
+<p>
+  Categories:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/categories/notes/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-cube"></i>
+      </span>
+      <span>Notes</span>
+    </span>
+  </a>
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/categories/legacy/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-cube"></i>
+      </span>
+      <span>Legacy</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+<p>
+  Tags:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/tags/algorithm/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>Algorithm</span>
+    </span>
+  </a>
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/tags/evolutionary-computation/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>Evolutionary Computation</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <p>在遗传算法中，如何从亲代中产生好的子代个体是至关重要的问题。本文将收录一些经典的、但理解起来略有难度的交叉和变异算子（Crossover and mutation operators），并简要叙述一下其背后的原理。</p>
+<p>本文中各种算子的中文名称均为个人直译结果，不代表学术界公认译名（本来也基本没有……）。</p>
+<span id="continue-reading"></span><h2 id="mo-ni-01jiao-cha">模拟01交叉</h2>
+<p><strong>模拟01交叉</strong>（Simulated Binary Crossover, SBX）将01编码的交叉思想拓展到了实数编码的问题上来。首先我们来重新观察01编码下的单点交叉：给定两个亲代个体$x_1, x_2$，我们可以写成$n$位二进制表达形式：</p>
+<p>$$
+\begin{align*}
+x_1 &amp;= a_{n-1} \cdot 2^{n-1} + a_{n-2} \cdot 2^{n-2} + \dots + a_1 \cdot 2 + a_0 \
+x_2 &amp;= b_{n-1} \cdot 2^{n-1} + b_{n-2} \cdot 2^{n-2} + \dots + b_1 \cdot 2 + b_0
+\end{align*}
+$$
+设交叉发生在第$k$位，则上式可以简写成：
+$$
+\begin{align*}
+x_1 &amp;= A_1 \cdot 2^k + A_0 \
+x_2 &amp;= B_1 \cdot 2^k + B_0
+\end{align*}
+$$
+由这两个个体，我们可以得到两个子代个体：
+$$
+\begin{align*}
+y_1 &amp;= A_1 \cdot 2^k + B_0 \
+y_2 &amp;= B_1 \cdot 2^k + A_0
+\end{align*}
+$$
+观察这两组式子，不难发现$(x_1 + x_2) / 2 = (y_1 + y_2) / 2$，即亲代和子代都关于某一中心点等距。为了量化交叉过程中的距离变化关系，我们引入一个概念——<strong>扩张因子</strong>（Spread factor）$\beta$。它的定义式为：
+$$
+\beta = \left|\frac{y_1 - y_2}{x_1 - x_2}\right|
+$$
+当$0 \leq \beta &lt; 1$时，我们称该交叉是<strong>收缩的</strong>（Contracting）；当$\beta &gt; 1$时，称该交叉为<strong>扩张的</strong>（Expanding）；当$\beta = 1$时，称该交叉为<strong>稳定的</strong>（Stationary）。在<a href="https://wpmedia.wolfram.com/uploads/sites/13/2018/02/09-2-2.pdf">这篇论文</a>中，作者讨论并推广了极端情况下（亲代为全0和全1）交叉点的位置$k$满足某一扩张因子$\beta$的概率密度函数。令收缩情形下和扩张情形下的概率密度函数分别为$\mathcal{C}(\beta)$和$\mathcal{E}(\beta)$，函数在各自定义域上的积分均为0.5。作者给出了两个函数的形式和以下关系式：
+$$
+\mathcal{E}(\beta) = \frac{1}{\beta^2}\mathcal{C}(\frac{1}{\beta})
+$$
+在实数域上，要想达成模拟01交叉的特点，我们首先要讲实数和01串建立联系。假设存在这样一个线性映射：
+$$
+\begin{align*}
+p_i &amp;= mx_i + t \
+c_i &amp;= my_i + t
+\end{align*}
+$$
+我们可以利用该映射将原本01编码的亲代$x_1, x_2$和子代$y_1, y_2$映射成实数$p_1, p_2$以及$c_1, c_2$。由该映射的线性性，扩张因子这个概念可以很自然地推广到实数编码上。因此我们可以用下式来进行交叉操作：
+$$
+\begin{align*}
+c_1 &amp;= 0.5[(1 + \beta) p_1 + (1 - \beta) p_2] \
+c_2 &amp;= 0.5[(1 - \beta) p_1 + (1 + \beta) p_2]
+\end{align*}
+$$
+不难验证该交叉满足式中的扩张因子$\beta$。$\beta$的分布由以下式子来模拟，详细不在这里赘述了：
+$$
+\mathcal{P}(\beta) = \begin{cases}
+0.5(\eta_c + 1)\beta^{\eta_c},&amp; 0 \leq \beta \leq 1 \
+0.5(\eta_c + 1)\beta^{-(\eta_c + 2)},&amp; \beta &gt; 1
+\end{cases}
+$$
+其中$\eta_c$称为<strong>分布指数</strong>（Distribution index）。$\eta_c$越大，$\mathcal{P}(\beta)$在$\beta = 1$处的取值就越大，交叉得到的子代也就离亲代越近。在实际运行中，获取$\beta$的途径是给定一个随机数$u \in [0, 1]$，然后从上述分布中求得$u$分位点作为当前（扩张因子对应的）算子。</p>
+<h2 id="shun-xu-jiao-cha">顺序交叉</h2>
+<p><strong>顺序交叉</strong>（Order Crossover, OX）适用于邮差问题等以排列的形式编码的问题。它的特性是在交叉两个排列的同时保持两个片段在各自亲代中的顺序。以单点交叉举例，假设两亲代是<code>[1, 2, 3, 4, 5, 6]</code>和<code>[5, 6, 3, 2, 4, 1]</code>，在下标3处交叉的结果则为<code>[1, 2, 3, 5, 6, 4]</code>和<code>[5, 6, 3, 1, 2, 4]</code>。</p>
+<p>推广到两点交叉的情形，使用Python实现的代码如下：</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">import </span><span>random
+</span><span>
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">ox</span><span>(</span><span style="color:#bf616a;">xa</span><span>, </span><span style="color:#bf616a;">xb</span><span>):
+</span><span>    d = </span><span style="color:#96b5b4;">len</span><span>(xa)
+</span><span>    c1, c2 = random.</span><span style="color:#bf616a;">sample</span><span>(</span><span style="color:#96b5b4;">range</span><span>(d), </span><span style="color:#d08770;">2</span><span>)
+</span><span>    </span><span style="color:#b48ead;">if </span><span>c1 &gt; c2:
+</span><span>        c1, c2 = c2, c1
+</span><span>        
+</span><span>    u = xa[:]
+</span><span>    </span><span style="color:#b48ead;">for </span><span>j </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span>(c1, c2):
+</span><span>        h = </span><span style="color:#d08770;">0
+</span><span>        </span><span style="color:#b48ead;">while </span><span>xb[j] != u[h]:
+</span><span>            h = (h + </span><span style="color:#d08770;">1</span><span>) % d
+</span><span>        l = (h + </span><span style="color:#d08770;">1</span><span>) % d
+</span><span>        </span><span style="color:#b48ead;">while </span><span>l != c2:
+</span><span>            u[h] = u[l]
+</span><span>            h = (h + </span><span style="color:#d08770;">1</span><span>) % d
+</span><span>            l = (l + </span><span style="color:#d08770;">1</span><span>) % d
+</span><span>    </span><span style="color:#b48ead;">for </span><span>j </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span>(c1, c2):
+</span><span>        u[j] = xb[j]
+</span><span>        
+</span><span>    </span><span style="color:#b48ead;">return </span><span>u
+</span></code></pre>
+<p>简要分析一下，上述代码将$\mathbf{x}^b$中下标范围在$[c_1, c_2)$里的部分替换到$\mathbf{x}^a$中得到子代$\mathbf{u}$。要理解第一个for循环的功能，我们首先把这个序列看成一个循环序列。初始化阶段，令$\mathbf{u} = \mathbf{x}^a$。对$[c_1, c_2)$里的每个下标$j$，首先在$\mathbf{u}$中找到$x_j^b$出现的下标$h$，然后对$[h, c_2)$这个区间内的元素做一次“左移”。为了方便理解，我们可以认为此处进行了一次“循环左移”，使得$x_j^b$这个元素被移动至$c_2-1$这个位置。如此循环操作后，$\mathbf{x}^b$中下标范围不在$[c_1, c_2)$里的部分在$\mathbf{u}$中对应的下标都不在$[c_1, c_2)$里。此时我们只需将$\mathbf{x}^b$中对应的元素复制进$\mathbf{u}$中即可。</p>
+<hr />
+<p>下面的内容等看完相关文献再补上……</p>
+<h2 id="duo-xiang-shi-bian-yi">多项式变异</h2>
+<p><strong>多项式变异</strong>（Polynomial Mutation）和SBX一样，适用于实数形式编码的问题。</p>
+<h2 id="chai-fen-jin-hua-zhong-de-jiao-cha-suan-zi">差分进化中的交叉算子</h2>
+<p><strong>差分进化</strong>（Differential Evolution, DE）算法依靠两个个体的差值和另一选出来的个体组合来搜索新的解。</p>
+
+          </div>
+        </article>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Search</p>
+      </header>
+      <section class="modal-card-body">
+        <div class="field mb-2">
+          <div class="control">
+            <input class="input" id="search" placeholder="Search this website." type="search" />
+          </div>
+        </div>
+        <div class="search-results">
+          <div class="search-results__items"></div>
+        </div>
+      </section>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+              
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;posts&#x2F;nsga-ii&#x2F;">
+              <span class="icon mr-2">
+                <i class="fas fa-arrow-circle-left"></i>
+              </span>
+              演化多目标优化：基于支配的经典算法NSGA-II
+            </a>
+          </div>
+           
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;posts&#x2F;moead&#x2F;">
+              演化多目标优化：基于分解思想的经典算法MOEA&#x2F;D<span class="icon ml-2">
+                <i class="fas fa-arrow-circle-right"></i>
+              </span>
+            </a>
+          </div>
+          
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+  
+  <footer class="footer py-4">
+    <div class="content has-text-centered">
+      <p>
+        Built with
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-code"></i>
+          </span>
+          <span>code</span>
+        </span>
+        and
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-heart"></i>
+          </span>
+          <span>love</span>
+        </span>
+      </p>
+      <p>
+        Powered by
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-power-off"></i>
+          </span>
+          <span>zola</span>
+        </span>
+      </p>
+    </div>
+  </footer>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/galleria.min.js" integrity="sha384-QSfwGT8/EU536DKdtyP2D6SLlh8zBaZ0cVkwfrwhqzIU9VCfJT00CLVP5t+HAiYg" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/themes/folio/galleria.folio.min.js" integrity="sha384-DwpKI+deZB267+hPKwiOIc5Y2GKsVL0mR6hgz7GgIu7AgAMYqJwcJKY1YBNfhWcY" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@8.13.5/dist/mermaid.min.js" integrity="sha384-0yWn54pSGtfKCU+skfA69l25VsCw+MZt4LQov3xNRoS7YkAMrFokGgSBnAWSK4pv" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1.1.13/dist/chart.xkcd.min.js" integrity="sha384-xC3h1+IHXK8seA+8KfT79Z4e0GPsznjXBoMa5nd8ooWKplPyXx92NOmljWxLC/cs" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://macromogic.xyz/elasticlunr.min.js"></script>
+  <script src="https://macromogic.xyz/search_index.en.js"></script><script src="https://macromogic.xyz/js/site.js"></script>
+
+  
+
+
+
+
+
+  
+  
+</body>
+
+</html>

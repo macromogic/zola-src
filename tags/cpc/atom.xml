@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Macromogic - CPC</title>
+    <link href="https://macromogic.xyz/tags/cpc/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://macromogic.xyz"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2019-09-19T00:00:00+00:00</updated>
+    <id>https://macromogic.xyz/tags/cpc/atom.xml</id>
+    <entry xml:lang="en">
+        <title>CPC算法笔记——二次剩余</title>
+        <published>2019-09-19T00:00:00+00:00</published>
+        <updated>2019-09-19T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/cpc-quadratic-residue/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/cpc-quadratic-residue/</id>
+        
+        <summary type="html">&lt;h2 id=&quot;ding-yi&quot;&gt;定义&lt;&#x2F;h2&gt;
+&lt;p&gt;一个整数$x$对另一个整数$p$的&lt;strong&gt;二次剩余&lt;&#x2F;strong&gt;，指$x^2$模$p$的余数。&lt;&#x2F;p&gt;
+&lt;p&gt;我们称整数$d$为&lt;strong&gt;模$p$的二次剩余&lt;&#x2F;strong&gt;当且仅当$\exists x \in \mathbb{Z} \mbox{ s.t. } x^2 \equiv d \pmod p$；反之，称$d$为&lt;strong&gt;模$p$的非二次剩余&lt;&#x2F;strong&gt;。&lt;&#x2F;p&gt;
+&lt;p&gt;上下文无歧义的情况下可以简称为&lt;strong&gt;剩余&lt;&#x2F;strong&gt;和&lt;strong&gt;非剩余&lt;&#x2F;strong&gt;。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>CPC算法笔记——置换和Polya定理</title>
+        <published>2019-08-28T00:00:00+00:00</published>
+        <updated>2019-08-28T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/cpc-polya/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/cpc-polya/</id>
+        
+        <summary type="html">&lt;h2 id=&quot;zhi-huan&quot;&gt;置换&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;置换&lt;&#x2F;strong&gt;即$[![1, n]!] \triangleq {1, 2, \dots, n}$到自身的1-1变换：$[![1, n]!] \rightarrow [![1, n]!]$&lt;&#x2F;p&gt;
+&lt;p&gt;$p: i \rightarrow a_i, (a_i \neq a_j, i \neq j)$，&lt;&#x2F;p&gt;
+&lt;p&gt;其中$a_1, a_2, \dots, a_n$是$[![1, n]!]$的一个&lt;strong&gt;全排列&lt;&#x2F;strong&gt;，&lt;&#x2F;p&gt;
+&lt;p&gt;称此置换为$n$阶置换，记为：&lt;&#x2F;p&gt;
+&lt;p&gt;$p=\pmatrix{1&amp;amp;2&amp;amp;\cdots&amp;amp;n\a_1&amp;amp;a_2&amp;amp;\cdots&amp;amp;a_n}$&lt;&#x2F;p&gt;
+&lt;p&gt;$n$阶置换共有$n!$个。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>CPC算法笔记——中国剩余定理</title>
+        <published>2019-08-22T00:00:00+00:00</published>
+        <updated>2019-08-22T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/cpc-chinese-remainder-theorem/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/cpc-chinese-remainder-theorem/</id>
+        
+        <summary type="html">&lt;p&gt;中国剩余定理可用于解一元线性方程组：
+$$
+\begin{cases}
+x \equiv a_1 \pmod {m_1} \
+x \equiv a_2 \pmod {m_2} \
+\quad \vdots \
+x \equiv a_n \pmod {m_n}
+\end{cases}
+$$&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+</feed>

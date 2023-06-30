@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Macromogic - Math</title>
+    <link href="https://macromogic.xyz/tags/math/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://macromogic.xyz"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-02-04T00:00:00+00:00</updated>
+    <id>https://macromogic.xyz/tags/math/atom.xml</id>
+    <entry xml:lang="en">
+        <title>线性代数复习：置换矩阵和“名次向量”</title>
+        <published>2021-02-04T00:00:00+00:00</published>
+        <updated>2021-02-04T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/permutation-rank/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/permutation-rank/</id>
+        
+        <summary type="html">&lt;p&gt;没事瞎水博客系列……&lt;&#x2F;p&gt;
+&lt;p&gt;在日常处理矩阵的时候，有时我们希望在不更改矩阵的前提下获知其每一行&#x2F;列的字典序“&lt;strong&gt;名次&lt;&#x2F;strong&gt;”（rank）。MATLAB&#x2F;NumPy分别提供了&lt;code&gt;sortrows&lt;&#x2F;code&gt;&#x2F;&lt;code&gt;argsort&lt;&#x2F;code&gt;方法来获得一个“&lt;strong&gt;索引向量&lt;&#x2F;strong&gt;”（index vector），表示排序后的矩阵的每一行&#x2F;列对应原矩阵的行&#x2F;列号。只需对索引向量再做一次排序，便可得到对应的”&lt;strong&gt;名次向量&lt;&#x2F;strong&gt;“（rank vector）。对应MATLAB代码大致如下：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;matlab&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-matlab &quot;&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span&gt;[~, index] = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;sortrows&lt;&#x2F;span&gt;&lt;span&gt;(matrix);
+&lt;&#x2F;span&gt;&lt;span&gt;[~, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;rank&lt;&#x2F;span&gt;&lt;span&gt;] = &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;sort&lt;&#x2F;span&gt;&lt;span&gt;(index);
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;为了深入理解这个操作背后的原理，我参考了StackExchange上的&lt;a href=&quot;https:&#x2F;&#x2F;math.stackexchange.com&#x2F;questions&#x2F;3607762&#x2F;why-does-sorting-twice-produce-a-rank-vector&quot;&gt;这篇回答&lt;&#x2F;a&gt;。从他的证明过程中我发现了一个关键：排序前后两个矩阵的关系可以用&lt;strong&gt;排列&#x2F;置换&lt;&#x2F;strong&gt;（permutation）来刻画。下面我将站在线性代数的视角来系统化解释一下“名次向量”背后的原理。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>算法复习笔记：网络流</title>
+        <published>2020-08-11T00:00:00+00:00</published>
+        <updated>2020-08-11T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/max-flow/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/max-flow/</id>
+        
+        <summary type="html">&lt;p&gt;龟速补上欠下的账ing……$\DeclareMathOperator{\capa}{cap}$&lt;&#x2F;p&gt;
+&lt;p&gt;写完发现读着好晦涩，但数学不就是这样的吗🌚&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ji-ben-gai-nian-fu-hao-biao-shi&quot;&gt;基本概念&#x2F;符号表示&lt;&#x2F;h2&gt;
+&lt;p&gt;为了方便下文叙述，现做如下规定&#x2F;定义：&lt;&#x2F;p&gt;
+&lt;p&gt;$G = (V, E)$是有向、无平行边的图，每条边边权为正，其中有一个&lt;strong&gt;源点&lt;&#x2F;strong&gt;（source）$s$和&lt;strong&gt;汇点&lt;&#x2F;strong&gt;（sink）$t$满足：没有一条边以$t$为起点，或以$s$为终点。&lt;&#x2F;p&gt;
+&lt;p&gt;对某边$e \in E$，记该边边权为$c(e)$。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>算法复习笔记：多项式凭什么能FFT？</title>
+        <published>2020-06-23T00:00:00+00:00</published>
+        <updated>2020-06-23T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/fft/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/fft/</id>
+        
+        <summary type="html">&lt;h2 id=&quot;xie-zai-qian-mian&quot;&gt;写在前面&lt;&#x2F;h2&gt;
+&lt;p&gt;本文仅面向学习FFT算法的&lt;strong&gt;CS学生&lt;&#x2F;strong&gt;。文中关于傅里叶变换的阐述仅用于帮助&lt;strong&gt;快速简要&lt;&#x2F;strong&gt;地理解算法背后时域&#x2F;频域变换的意义，逻辑性不会像「信号与系统」课那么强。本人没系统学过「信号与系统」这门课，能写出这篇文章也要感谢来自FDU、SCUT的两位同学的帮助。欢迎各位大佬对本文内容进行指正！&lt;&#x2F;p&gt;
+&lt;p&gt;要系统学习「信号与系统」的内容，可参阅&lt;strong&gt;奥本海默&lt;&#x2F;strong&gt;著的《信号与系统》一书。&lt;&#x2F;p&gt;
+&lt;p&gt;在我学习FFT时，第一个面对的问题背景是**「给定两个多项式，如何快速求得二者的乘积？」&lt;strong&gt;老师或者博客会先介绍&lt;&#x2F;strong&gt;多项式的系数表示和点值表示**（在下一节也会再啰嗦一遍），然后引入&lt;strong&gt;单位根&lt;&#x2F;strong&gt;和&lt;strong&gt;分治&lt;&#x2F;strong&gt;思想来实现两种表示法间的转换。&lt;a href=&quot;https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;31584464&quot;&gt;这篇专栏&lt;&#x2F;a&gt;对算法内容及前置知识的讲解算是非常详尽的了，但它并没有解决一个问题：傅里叶变换的本质是将时域上的卷积转化成频域上的乘法，那么多项式的系数&#x2F;点值表示为什么能和信号的时域&#x2F;频域对应？本文将从&lt;strong&gt;偏向EE&lt;&#x2F;strong&gt;的角度来探讨这个算法，并尝试揭示其中的关联。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>CPC算法笔记——二次剩余</title>
+        <published>2019-09-19T00:00:00+00:00</published>
+        <updated>2019-09-19T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/cpc-quadratic-residue/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/cpc-quadratic-residue/</id>
+        
+        <summary type="html">&lt;h2 id=&quot;ding-yi&quot;&gt;定义&lt;&#x2F;h2&gt;
+&lt;p&gt;一个整数$x$对另一个整数$p$的&lt;strong&gt;二次剩余&lt;&#x2F;strong&gt;，指$x^2$模$p$的余数。&lt;&#x2F;p&gt;
+&lt;p&gt;我们称整数$d$为&lt;strong&gt;模$p$的二次剩余&lt;&#x2F;strong&gt;当且仅当$\exists x \in \mathbb{Z} \mbox{ s.t. } x^2 \equiv d \pmod p$；反之，称$d$为&lt;strong&gt;模$p$的非二次剩余&lt;&#x2F;strong&gt;。&lt;&#x2F;p&gt;
+&lt;p&gt;上下文无歧义的情况下可以简称为&lt;strong&gt;剩余&lt;&#x2F;strong&gt;和&lt;strong&gt;非剩余&lt;&#x2F;strong&gt;。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>CPC算法笔记——置换和Polya定理</title>
+        <published>2019-08-28T00:00:00+00:00</published>
+        <updated>2019-08-28T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/cpc-polya/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/cpc-polya/</id>
+        
+        <summary type="html">&lt;h2 id=&quot;zhi-huan&quot;&gt;置换&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;置换&lt;&#x2F;strong&gt;即$[![1, n]!] \triangleq {1, 2, \dots, n}$到自身的1-1变换：$[![1, n]!] \rightarrow [![1, n]!]$&lt;&#x2F;p&gt;
+&lt;p&gt;$p: i \rightarrow a_i, (a_i \neq a_j, i \neq j)$，&lt;&#x2F;p&gt;
+&lt;p&gt;其中$a_1, a_2, \dots, a_n$是$[![1, n]!]$的一个&lt;strong&gt;全排列&lt;&#x2F;strong&gt;，&lt;&#x2F;p&gt;
+&lt;p&gt;称此置换为$n$阶置换，记为：&lt;&#x2F;p&gt;
+&lt;p&gt;$p=\pmatrix{1&amp;amp;2&amp;amp;\cdots&amp;amp;n\a_1&amp;amp;a_2&amp;amp;\cdots&amp;amp;a_n}$&lt;&#x2F;p&gt;
+&lt;p&gt;$n$阶置换共有$n!$个。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>CPC算法笔记——中国剩余定理</title>
+        <published>2019-08-22T00:00:00+00:00</published>
+        <updated>2019-08-22T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://macromogic.xyz/posts/cpc-chinese-remainder-theorem/" type="text/html"/>
+        <id>https://macromogic.xyz/posts/cpc-chinese-remainder-theorem/</id>
+        
+        <summary type="html">&lt;p&gt;中国剩余定理可用于解一元线性方程组：
+$$
+\begin{cases}
+x \equiv a_1 \pmod {m_1} \
+x \equiv a_2 \pmod {m_2} \
+\quad \vdots \
+x \equiv a_n \pmod {m_n}
+\end{cases}
+$$&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+</feed>

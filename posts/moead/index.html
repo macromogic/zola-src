@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  <link href='&#x2F;icons&#x2F;site.webmanifest' rel="manifest" />
+  
+  
+  <link color="#5bbad5" href='&#x2F;icons&#x2F;safari-pinned-tab.svg' rel="mask-icon" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-16x16.png' rel="icon" sizes="16x16" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-32x32.png' rel="icon" sizes="32x32" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;apple-touch-icon.png' rel="apple-touch-icon" sizes="180x180" />
+  
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/themes/folio/galleria.folio.min.css" integrity="sha384-+rY0QD+LRnTOquDMzGa9lXU6jIwdiQuwCJQ2cdcW0qeP/0UbjQCZlXnRsUMA+9pH" crossorigin="anonymous">
+  
+
+  
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.1/css/academicons.min.css" integrity="sha384-FIue+PI4SsI9XfHCz8dBLg33b0c1fMJgNU3X//L26FYbGnlSEfWmNT7zgWc2N9b6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link href="https://macromogic.xyz/deep-thought.css" rel="stylesheet" />
+  
+  
+
+  <title>
+    
+Macromogic | 演化多目标优化：基于分解思想的经典算法MOEA&#x2F;D
+
+  </title>
+
+  
+  
+  
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+  
+  
+</head>
+
+<body class="has-background-white">
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item is-size-5 has-text-weight-bold" href="https:&#x2F;&#x2F;macromogic.xyz">Macromogic</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;">
+            Home
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;posts">
+            Posts
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;tags">
+            Tags
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;categories">
+            Categories
+          </a>
+          
+          
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title">
+            演化多目标优化：基于分解思想的经典算法MOEA&#x2F;D
+          </h1>
+          <p class="subtitle"></p>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="fas fa-user"></i>
+  </span>
+  <span>Weijie Huang published on</span>
+  <span class="icon">
+    <i class="far fa-calendar-alt"></i>
+  </span>
+  <span><time datetime="2021-02-18">February 18, 2021</time></span>
+</span>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="far fa-clock"></i>
+  </span>
+  <span>6 min,</span>
+  <span class="icon">
+    <i class="fas fa-pencil-alt"></i>
+  </span>
+  <span>1062 words</span>
+</span>
+
+            </div>
+            <div class="column">
+              
+              
+<p>
+  Categories:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/categories/notes/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-cube"></i>
+      </span>
+      <span>Notes</span>
+    </span>
+  </a>
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/categories/legacy/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-cube"></i>
+      </span>
+      <span>Legacy</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+<p>
+  Tags:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/tags/algorithm/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>Algorithm</span>
+    </span>
+  </a>
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/tags/evolutionary-computation/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>Evolutionary Computation</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <h2 id="qian-yan">前言</h2>
+<p>在多目标优化问题中，基于帕累托支配关系的最优解集（即帕累托前沿，PF）很可能不是有限的集合；多数情况下可能是高维空间中某一区域。因此，优化算法的目标就是在有限时间里得到一个能够表现出PF的形状、且分布良好的解集。这也是为什么收敛性和多样性在演化多目标优化算法中是两大重要指标。经典的基于支配关系的算法框架（如<a href="https://macromogic.xyz/posts/nsga-ii/">NSGA-II</a>等）依靠适应值来维护解集的多样性，避免边缘解的丢失以及解过于密集的现象。而MOEA/D的提出，将分解的思想重新带入了演化多目标优化的领域来。</p>
+<span id="continue-reading"></span><h2 id="chang-jian-fen-jie-fang-fa">常见分解方法</h2>
+<p>分解思想的核心是将一个多目标问题转化成一系列单目标问题来同时优化。这其中涉及到各种标量化的方法，如<strong>加权求和（Weighted Sum）法</strong>、<strong>Tchebycheff法</strong>、<strong>边界交点（Boundary Intersection, BI）法</strong>等。加权求和的思想很简单，假设原目标函数为$\mathbf{F} = (F_1, F_2, \dots, F_n)^T$，给定一个权重向量$\boldsymbol{\lambda} = (\lambda_1, \lambda_2, \dots, \lambda_n)^T$，其中$\forall i = 1, 2, \dots, n,\ \lambda_i \geq 0$且$\sum_{i=1}^n \lambda_i = 1$，则新的目标函数为该解各个分量的加权和，即：</p>
+<p>$$
+g^{\mathrm{ws}}(\mathbf{x} \mid \boldsymbol{\lambda}) = \sum_{i=1}^n\lambda_iF_i(\mathbf{x})
+$$</p>
+<p>Tchebycheff法基于一个参考向量$\mathbf{z}$和一个权重向量$\boldsymbol{\lambda}$，其中$\mathbf{z}$每个分量为决策空间中对应分量上的最值。对应的目标函数为该解到$\mathbf{z}$的“加权Tchebycheff距离”，即：</p>
+<p>$$
+g^{\mathrm{te}}(\mathbf{x} \mid \boldsymbol{\lambda}, \mathbf{z}) = \max_{1 \leq i \leq n} { \lambda_i \left\lvert F_i(\mathbf{x}) - z_i \right\rvert }
+$$</p>
+<p>BI法同样需要参考向量$\mathbf{z}$和权重向量$\boldsymbol{\lambda}$，其目的是尽可能将答案向$\mathbf{z}$的方向“拉拽”，因而对应的目标函数为：</p>
+<p>$$
+\begin{align*}
+g^{\mathrm{bi}}(\mathbf{x} \mid \boldsymbol{\lambda}, \mathbf{z}) &amp;= d \
+\text{s.t. }\ \ \qquad \mathbf{z} - \mathbf{F}(\mathbf{x}) &amp;= d\boldsymbol{\lambda}
+\end{align*}
+$$</p>
+<p>BI法的一个缺陷在于$\mathbf{F}(\mathbf{x}), \mathbf{z}, \boldsymbol{\lambda}$需要满足上式中的共线条件；而该约束在多数情形下难以维护。因此，我们可以考虑引入一个带<strong>惩罚参数（Penalty parameter）</strong>$\theta$的版本，即：</p>
+<p>$$
+g^{\mathrm{pbi}}(\mathbf{x} \mid \boldsymbol{\lambda}, \mathbf{z}) = d_1 + \theta d_2
+$$</p>
+<p>其中$d_1, d_2$分别表示$\mathbf{F}(\mathbf{x})$和$\mathbf{z}$的距离在$\boldsymbol{\lambda}$上的投影、以及$\mathbf{F}(\mathbf{x})$到$\boldsymbol{\lambda}$所在直线的距离：</p>
+<p>$$
+\begin{align*}
+d_1 &amp;= \frac{\left\lVert (\mathbf{z} - \mathbf{F}(\mathbf{x}))^T \boldsymbol{\lambda} \right\rVert}{\left\lVert \boldsymbol{\lambda} \right\rVert} \
+d_2 &amp;= \left\lVert \mathbf{F}(\mathbf{x}) - (\mathbf{z} - d_1\boldsymbol{\lambda}) \right\rVert
+\end{align*}
+$$</p>
+<p>该方法也被称作<strong>广义BI法</strong>、或者<strong>PBI（Penalty-based BI）法</strong>。相比上述的Tchebycheff法，PBI法的优势在于它的分布更加均匀，且更能将支配解区分出来。</p>
+<h2 id="moea-dzhu-ti-kuang-jia">MOEA/D主体框架</h2>
+<p>由上述叙述可知，基于分解思想的算法主要是将多目标问题转化成单目标问题来辅助解决，且最优解的位置高度依赖选取的权重向量。若我们选取多个权重向量，那么问题将会变成一系列相对独立的单目标问题，每个问题对应一个权重向量；且若权重向量的选取合理，最后得到的PF也是良好分布的。</p>
+<p>初始化阶段，在选取完一系列权重向量$\boldsymbol{\lambda}^{(1)}, \boldsymbol{\lambda}^{(2)}, \dots, \boldsymbol{\lambda}^{(N)}$后，我们首先找到每个权重向量的$T$个“近邻”，其中第$i$个权重向量$\boldsymbol{\lambda}^{(i)}$的近邻对应的下标集合记作$B^{(i)}$，对应问题的答案记为$\mathbf{x}^{(i)}$。在演化过程中，$\boldsymbol{\lambda}^{(i)}$对应的单目标问题的下一代个体由下标在$B^{(i)}$中的个体杂交产生，得到的新个体将被用于更新参考向量$\mathbf{z}$、该问题对应的答案$\mathbf{x}^{(i)}$以及“近邻向量”对应问题的答案$\mathbf{x}^{(j)}\ (j \in B^{(i)})$。整个问题的PF由一个独立的外部缓存维护。</p>
+
+          </div>
+        </article>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Search</p>
+      </header>
+      <section class="modal-card-body">
+        <div class="field mb-2">
+          <div class="control">
+            <input class="input" id="search" placeholder="Search this website." type="search" />
+          </div>
+        </div>
+        <div class="search-results">
+          <div class="search-results__items"></div>
+        </div>
+      </section>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+              
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;posts&#x2F;ga-cross-mutate&#x2F;">
+              <span class="icon mr-2">
+                <i class="fas fa-arrow-circle-left"></i>
+              </span>
+              遗传算法中经典的交叉&#x2F;变异算子
+            </a>
+          </div>
+           
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+  
+  <footer class="footer py-4">
+    <div class="content has-text-centered">
+      <p>
+        Built with
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-code"></i>
+          </span>
+          <span>code</span>
+        </span>
+        and
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-heart"></i>
+          </span>
+          <span>love</span>
+        </span>
+      </p>
+      <p>
+        Powered by
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-power-off"></i>
+          </span>
+          <span>zola</span>
+        </span>
+      </p>
+    </div>
+  </footer>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/galleria.min.js" integrity="sha384-QSfwGT8/EU536DKdtyP2D6SLlh8zBaZ0cVkwfrwhqzIU9VCfJT00CLVP5t+HAiYg" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/themes/folio/galleria.folio.min.js" integrity="sha384-DwpKI+deZB267+hPKwiOIc5Y2GKsVL0mR6hgz7GgIu7AgAMYqJwcJKY1YBNfhWcY" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@8.13.5/dist/mermaid.min.js" integrity="sha384-0yWn54pSGtfKCU+skfA69l25VsCw+MZt4LQov3xNRoS7YkAMrFokGgSBnAWSK4pv" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1.1.13/dist/chart.xkcd.min.js" integrity="sha384-xC3h1+IHXK8seA+8KfT79Z4e0GPsznjXBoMa5nd8ooWKplPyXx92NOmljWxLC/cs" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://macromogic.xyz/elasticlunr.min.js"></script>
+  <script src="https://macromogic.xyz/search_index.en.js"></script><script src="https://macromogic.xyz/js/site.js"></script>
+
+  
+
+
+
+
+
+  
+  
+</body>
+
+</html>

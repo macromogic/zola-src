@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  <link href='&#x2F;icons&#x2F;site.webmanifest' rel="manifest" />
+  
+  
+  <link color="#5bbad5" href='&#x2F;icons&#x2F;safari-pinned-tab.svg' rel="mask-icon" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-16x16.png' rel="icon" sizes="16x16" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-32x32.png' rel="icon" sizes="32x32" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;apple-touch-icon.png' rel="apple-touch-icon" sizes="180x180" />
+  
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/themes/folio/galleria.folio.min.css" integrity="sha384-+rY0QD+LRnTOquDMzGa9lXU6jIwdiQuwCJQ2cdcW0qeP/0UbjQCZlXnRsUMA+9pH" crossorigin="anonymous">
+  
+
+  
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.1/css/academicons.min.css" integrity="sha384-FIue+PI4SsI9XfHCz8dBLg33b0c1fMJgNU3X//L26FYbGnlSEfWmNT7zgWc2N9b6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link href="https://macromogic.xyz/deep-thought.css" rel="stylesheet" />
+  
+  
+
+  <title>
+    
+Macromogic | 算法复习笔记：网络流
+
+  </title>
+
+  
+  
+  
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+  
+  
+</head>
+
+<body class="has-background-white">
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item is-size-5 has-text-weight-bold" href="https:&#x2F;&#x2F;macromogic.xyz">Macromogic</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;">
+            Home
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;posts">
+            Posts
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;tags">
+            Tags
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;categories">
+            Categories
+          </a>
+          
+          
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title">
+            算法复习笔记：网络流
+          </h1>
+          <p class="subtitle"></p>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="fas fa-user"></i>
+  </span>
+  <span>Weijie Huang published on</span>
+  <span class="icon">
+    <i class="far fa-calendar-alt"></i>
+  </span>
+  <span><time datetime="2020-08-11">August 11, 2020</time></span>
+</span>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="far fa-clock"></i>
+  </span>
+  <span>15 min,</span>
+  <span class="icon">
+    <i class="fas fa-pencil-alt"></i>
+  </span>
+  <span>2903 words</span>
+</span>
+
+            </div>
+            <div class="column">
+              
+              
+<p>
+  Categories:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/categories/notes/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-cube"></i>
+      </span>
+      <span>Notes</span>
+    </span>
+  </a>
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/categories/legacy/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-cube"></i>
+      </span>
+      <span>Legacy</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+<p>
+  Tags:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/tags/math/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>Math</span>
+    </span>
+  </a>
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/tags/algorithm/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>Algorithm</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <p>龟速补上欠下的账ing……$\DeclareMathOperator{\capa}{cap}$</p>
+<p>写完发现读着好晦涩，但数学不就是这样的吗🌚</p>
+<h2 id="ji-ben-gai-nian-fu-hao-biao-shi">基本概念/符号表示</h2>
+<p>为了方便下文叙述，现做如下规定/定义：</p>
+<p>$G = (V, E)$是有向、无平行边的图，每条边边权为正，其中有一个<strong>源点</strong>（source）$s$和<strong>汇点</strong>（sink）$t$满足：没有一条边以$t$为起点，或以$s$为终点。</p>
+<p>对某边$e \in E$，记该边边权为$c(e)$。</p>
+<span id="continue-reading"></span>
+<p>若某点集$A \subseteq V$，规定$E_A^- = (A \times (V \setminus A)) \cap E, E_A^+ = ((V \setminus A) \times A) \cap E$，即$E_A^-, E_A^+$分别表示**“离开$A$”<strong>和</strong>“到达$A$”**的边集。相似地，对于某一节点$v \in V$，记$E_v^- = ({v} \times (V \setminus {v})) \cap E, E_v^+ = ((V \setminus {v}) \times {v}) \cap E$。</p>
+<p>$A \sqcup B$表示两个集合$A, B$的<strong>不交并</strong>。</p>
+<p>若两个点集$A, B \subseteq V$满足$V = A \sqcup B$，且有：$u \in A, v \in B$以及子图$G_A=(A, (A \times A) \cap E), G_B = (B, (B \times B) \cap E)$分别连通，则称$(A, B)$为$G$的<strong>割（cut）</strong>（或**$s$-$t$割**）。</p>
+<p>（用通俗语言描述就是将$G$一刀“砍”成两半，其中$s$和$t$不在同一边）</p>
+<p>一个割的<strong>容量</strong>（capacity）定义为：$\capa(A, B) = \sum_{e \in E_A^-}c(e)$。</p>
+<p><strong>最小割问题</strong>（Minimum Cut Problem）：求网络流图$G$容量最小的$s$-$t$割。</p>
+<p>若一个函数$f: E \rightarrow \mathbb{R}$满足：</p>
+<ul>
+<li>
+<p>$\forall e \in E,\ 0 \leq f(e) \leq c(e)$，其中$c(e)$又称该边的<strong>容量</strong>（capacity）；</p>
+</li>
+<li>
+<p>$\forall v \in V \setminus {s, t},\ \sum_{e \in E_v^+} f(e) = \sum_{e \in E_v^-} f(e)$（<strong>流量守恒，Flow Conservation</strong>）</p>
+<p>称$f$为网络流图$G$的一个<strong>流</strong>（flow）。其<strong>流量</strong>（flow value）定义为$v(f) = \sum_{e \in E_s^-} f(e)$。</p>
+</li>
+</ul>
+<p><strong>最大流问题</strong>（Maximum Flow Problem）：求网络流图$G$流量最大的流。</p>
+<h2 id="liu-he-ge">「流」和「割」</h2>
+<p>下面尝试说明：最大流问题和最小割问题是等价的。</p>
+<p>首先引出<strong>流量引理</strong>（Flow Value Lemma）：对于任一流$f$和任一$s$-$t$割$(A, B)$，从$A$流向$B$的总流量等于离开$s$的总流量，即：
+$$
+\sum_{e \in E_A^-} f(e) - \sum_{e \in E_A^+} f(e) = v(f)
+$$
+<em>证明</em>：由流量守恒：
+$$
+\begin{align*}
+v(f) &amp;= \sum_{e \in E_s^-} f(e) \
+&amp;= \sum_{v \in A} \left( \sum_{e \in E_v^-} f(e) - \sum_{e \in E_v^+} f(e) \right) \
+&amp;= \sum_{e \in E_A^-} f(e) - \sum_{e \in E_A^+} f(e)
+\end{align*}
+$$
+由该引理，可以得出流和割的<strong>弱对偶性</strong>（Weak Duality）：对于任一流$f$和任一$s$-$t$割$(A, B)$，$f$的流量$v(f)$至多等于$(A, B)$的容量$\capa(A, B)$。</p>
+<p><em>证明</em>：
+$$
+\begin{align*}
+v(f) &amp;=  \sum_{e \in E_A^-} f(e) - \sum_{e \in E_A^+} f(e) \
+&amp;\leq \sum_{e \in E_A^-} f(e) \
+&amp;\leq \sum_{e \in E_A^-} c(e) \
+&amp;= \capa(A, B)
+\end{align*}
+$$
+<em>引理</em>：若存在流$f$和割$(A, B)$使得$v(f) = \capa(A, B)$，则$f$是一个最大流，而$(A, B)$是一个最小割。</p>
+<p>对于一张网络流图$G$，若已存在一个流$f$，我们希望获知是否能对这个流进行修改，比如更改某一条边的流量或发送一条从$s$到$t$的新流。因此我们需要一张新图$G_f = (V, E_f)$来刻画这个流之外“剩下”的状态，其中$G_f$和$E_f$分别称作<strong>剩余图</strong>（residual graph）和<strong>剩余边集</strong>（set of residual edges）。</p>
+<p>若$e = (u, v) \in E$，则它对应的<strong>剩余边</strong>（residual edge）为$e$本身以及其反向边$e^R = (v, u)$。这两条边的容量（用$c_f$表示）分别为：
+$$
+\begin{align*}
+c_f(e) &amp;= c(e) - f(e) \
+c_f(e^R) &amp;= f(e)
+\end{align*}
+$$
+为保证剩余图依然是一张网络流图，规定$e$或$e^R$在$E_f$中当且仅当其容量非零。即：
+$$
+E_f = {e \in E \mid f(e) &lt; c(e)} \cup {e^R \mid e \in E, f(e) &gt; 0 }
+$$
+若$s, t$在$G_f$中依然连通，连接这两个节点的简单路径称为<strong>增广路径</strong>（augmenting path）或<strong>增广路</strong>。增广路上最小的剩余边容量称为<strong>瓶颈容量</strong>（bottleneck capacity），记作$c_b(G_f, p)$。若$f$是$G$上的一个流，而$p$是$G_f$上一条增广路，那么将$p$加入（augment to）$f$中得到$f’$，有$v(f’) = v(f)+c_b(G_f, p)$。
+这条性质称作增广路的<strong>主要特性</strong>（Key Property）。一般地，若$f$是$G$上的一个流，而$g$是$G_f$上的一个流，那么$f+g$是$G$上的一个流，其中$v(f+g) = v(f) + v(g)$，对任意$e \in E$，有$(f+g)(e) = f(e) + g(e) - g(e^R)$。</p>
+<h2 id="zui-da-liu-zui-xiao-ge-ding-li">最大流最小割定理</h2>
+<p>由增广路径的主要特性，我们可以获得一个基本的求最大流的思路：</p>
+<blockquote>
+<p>若剩余图中仍存在增广路径，则沿这条路径发送一个流（即加入到已求的流中），重复执行这个步骤直到增广路径不存在。</p>
+</blockquote>
+<p>这个思路称作<strong>Ford-Fulkerson方法</strong>。该方法的正确性由<strong>增广路定理</strong>（Augmenting Path Theorem）得到：流$f$是最大流当且仅当剩余图中不存在增广路。</p>
+<p>此外，由上述提到的弱对偶性，我们自然地想到：一张图的最大流等于最小割。这就是<strong>最大流最小割定理</strong>（Max-flow Min-cut Theorem）的内容。下面对这两个定理进行证明。</p>
+<p>要证明上述定理，只需说明以下三个命题互相等价：</p>
+<ul>
+<li>$a)$ 存在一个割$(A, B)$使得$v(f) = \capa(A, B)$</li>
+<li>$b)$ 流$f$是最大流</li>
+<li>$c)$ $f$对应的剩余图$G_f$中不存在增广路</li>
+</ul>
+<p><em>证明</em>：</p>
+<p>$a) \Rightarrow b)$ 由「弱对偶性」的推论得出（任一流的流量小于等于任一割的容量，则等于割容量的流为最大流）。</p>
+<p>$b) \Rightarrow c)$ 只需证明其逆否命题。若$G_f$中存在增广路$p$，由增广路的主要特性，可构造$f'$使得$v(f’) = v(f) + c_b(G_f, p) &gt; v(f)$，因此$f$不是最大流。</p>
+<p>$c) \Rightarrow a)$ 假设$f$对应的剩余图$G_f$中不存在增广路，令$A$为$s$在$G_f$中能到达的点的集合，$B = V \setminus A$，显然有$s \in A, t \in B$。由假设知，$G_f$不存在“离开$A$”的边，因此有$\forall e \in E_A^-, f(e) = c(e)$以及$\forall e \in E_A^+, f(e) = 0$（否则会产生“离开$A$”的剩余边，和假设矛盾）。于是由流量引理有：
+$$
+\begin{align*}
+v(f) &amp;= \sum_{e \in E_A^-} f(e) - \sum_{e \in E_A^+} f(e) \
+&amp;= \sum_{e \in E_A^-} c(e) \
+&amp;= \capa(A, B)
+\end{align*}
+$$
+至此，增广路定理和最大流最小割定理都能得到证明。</p>
+<h2 id="ford-fulkersonde-shi-xian">Ford-Fulkerson的实现</h2>
+<p>下面假定所有边容量均为$\left[1, \sum_{e \in E_s^-} c(e)\right]$内的正整数，且满足每条边的流量和剩余边容量均为正整数（整性不变性）。</p>
+<p>（如果允许边的容量为无理数，无法证明Ford-Fulkerson算法能在有限时间内停止，或得到实际的最大流。<a href="https://zh.wikipedia.org/wiki/Ford%E2%80%93Fulkerson%E7%AE%97%E6%B3%95#%E6%97%A0%E6%B3%95%E7%BB%88%E6%AD%A2%E7%AE%97%E6%B3%95%E7%9A%84%E6%A0%B7%E4%BE%8B">维基百科</a>上给出了该情形下的一个反例。）</p>
+<p>由于每次流量至少增加$1$，不难证明Ford-Fulkerson方法能在至多$v(f^<em>) \leq C$次迭代内结束，其中$f^</em>$为最大流，$C$为某一正整数（<strong>有穷性</strong>）。</p>
+<p><em>推论</em>：若$C = 1$，则Ford-Fulkerson运行时间为$\mathrm{O}(mn)$，其中$m = |E|, n = |V|$。BFS遍历时间为$\mathrm{O}(m+n)$，添加增广路耗时$\mathrm{O}(n)$。</p>
+<p>由整性不变性和增广路定理，不难证明：若网络流图中每条边权均为正整数，则存在一个最大流满足每条边的流量均为正整数。</p>
+<p>现在讨论如何找到增广路并快速求出最大流。</p>
+<h3 id="rong-liang-suo-fang-capacity-scaling-fa">“容量缩放”（Capacity-Scaling）法</h3>
+<p>要想提高寻找增广路并且求得最大流的效率，一个直观的思路就是找到尽可能“<em>短且胖</em>”（即遍数少、瓶颈容量大）的增广路径。</p>
+<p>首先，对于某一容量$\Delta$，令$G_f(\Delta)$表示剩余图中边容量不小于$\Delta$的部分，即$G_f(\Delta) = (V, E_f(\Delta))$，其中$E_f(\Delta) = {e \in E_f \mid c_f(e) \geq \Delta}$。观察到：$G_f(\Delta)$中任一增广路的容量一定大于等于$\Delta$，因而我们可以维护这个$\Delta$（称为<strong>缩放因子，scaling parameter</strong>），当$G_f(\Delta)$中不存在增广路时缩小$\Delta$值，直到$\Delta$为$1$为止，此时得到的流就是我们要求的最大流（$G_f(1)$不存在增广路等价于$G_f$不存在增广路，则由<strong>增广路定理</strong>显然可得）。</p>
+<p>现实中，为提高运行效率，一般令$\Delta$初值为<strong>不超过$\max_{e \in E_s^-}{c(e)}$的</strong>最大的$2$的幂，每次缩放时将$\Delta$减半，则$\Delta$始终为$2$的某一次方，显然也满足上文提到的<strong>整性不变性</strong>。</p>
+<p>下面提出三个引理：</p>
+<p><em>引理1</em>：该方法中有$1+\left\lfloor \log_2 C \right\rfloor$次迭代，其中$C$为上文<strong>有穷性</strong>处提到的迭代上界。</p>
+<p><em>证明</em>：由题目假设，显然有$\Delta \leq \max_{e \in E_s^-}{c(e)} \leq v(f^*) \leq C$，则缩放阶段数为$1+\left\lfloor \log_2 \Delta \right\rfloor \leq 1+\left\lfloor \log_2 C \right\rfloor$。</p>
+<p><em>引理2</em>：令$f$为一次迭代结束时的流（即，此时$G_f(\Delta)$不存在增广路），则$v(f^*) \leq v(f) + m\Delta$。</p>
+<p><em>证明</em>：我们只需证明：此时存在一个割$(A, B)$使得$\capa(A, B) \leq v(f) + m\Delta$。令$A$为$s$在$G_f(\Delta)$中能到达的点的集合，$B = V \setminus A$，则和之前证明类似地，有：
+$$
+\begin{align*}
+v(f) &amp;= \sum_{e \in E_A^-} f(e) - \sum_{e \in E_A^+} f(e) \
+&amp;\geq \sum_{e \in E_A^-} \left( c(e) - \Delta \right) - \sum_{e \in E_A^+} \Delta \
+&amp;\geq \sum_{e \in E_A^-} c(e) - m\Delta \
+&amp;= \capa(A, B) - m\Delta
+\end{align*}
+$$
+对第一个不等号的推导稍作解释：由假设知，$G_f$中不存在容量大于等于$\Delta$的增广路；更精确地说，$G_f$中离开$A$的剩余边权值均小于$\Delta$。因此有$\forall e \in E_A^-,\ f(e) \geq c(e) - \Delta$以及$\forall e \in E_A^+,\ f(e) \leq \Delta$。</p>
+<p><em>引理3</em>：每一次迭代最多加入$2m$条增广路。</p>
+<p><em>证明</em>：令$f$为某一次迭代开始时的流，由<em>引理2</em>有：$v(f^*) \leq v(f) + m \cdot 2\Delta$，又由算法知，每次增加的流量大小为$\Delta$，显然可得。</p>
+<p>由上述三条引理知，该算法的时间复杂度为$\mathrm{O}(m^2\log C)$，其中一共加入$\mathrm{O}(m\log C)$条增广路，搜索每条增广路（BFS）需要$\mathrm{O}(m)$的时间。</p>
+<h3 id="edmonds-karp-dinicsuan-fa">Edmonds–Karp/Dinic算法</h3>
+<p>Edmonds–Karp/Dinic算法思路和Ford-Fulkerson一样，不过时间复杂度可以优化至$\mathrm{O}(n^2m)$。该算法的思想是：<strong>每次用BFS寻找一条增广路，并沿该路径发送一条大小为其瓶颈容量的流；重复该过程直到$s$和$t$不连通</strong>。算法有穷性和正确性略去不证，下面对时间复杂度进行简单说明。</p>
+<p>由BFS的性质，每次找到的增广路均为当前剩余图中最短的，且一次迭代的时间复杂度为$\mathrm{O}(mn)$（由Ford-Fulkerson有穷性推论）。又因为每次发送的流大小为增广路的瓶颈容量，则至少有一条剩余边被“填满”。因此下一条搜索到该边时路径长度一定大于此次迭代的路径，且不超过$n$。由上述可知每次找到的最短增广路长度是单调递增的，迭代次数为$\mathrm{O}(n)$。因此总时间复杂度为$\mathrm{O}(n^2m)$。</p>
+<p>该算法还可以进一步优化（称为<strong>ISAP</strong>）。此外还存在一个忽略流守恒性、从比较“物理”的角度来求解的<strong>预留推进算法</strong>。请参阅<a href="https://oi-wiki.org/graph/flow/max-flow">OI Wiki</a>。</p>
+
+          </div>
+        </article>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Search</p>
+      </header>
+      <section class="modal-card-body">
+        <div class="field mb-2">
+          <div class="control">
+            <input class="input" id="search" placeholder="Search this website." type="search" />
+          </div>
+        </div>
+        <div class="search-results">
+          <div class="search-results__items"></div>
+        </div>
+      </section>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+              
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;posts&#x2F;fft&#x2F;">
+              <span class="icon mr-2">
+                <i class="fas fa-arrow-circle-left"></i>
+              </span>
+              算法复习笔记：多项式凭什么能FFT？
+            </a>
+          </div>
+           
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;posts&#x2F;permutation-rank&#x2F;">
+              线性代数复习：置换矩阵和“名次向量”<span class="icon ml-2">
+                <i class="fas fa-arrow-circle-right"></i>
+              </span>
+            </a>
+          </div>
+          
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+  
+  <footer class="footer py-4">
+    <div class="content has-text-centered">
+      <p>
+        Built with
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-code"></i>
+          </span>
+          <span>code</span>
+        </span>
+        and
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-heart"></i>
+          </span>
+          <span>love</span>
+        </span>
+      </p>
+      <p>
+        Powered by
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-power-off"></i>
+          </span>
+          <span>zola</span>
+        </span>
+      </p>
+    </div>
+  </footer>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/galleria.min.js" integrity="sha384-QSfwGT8/EU536DKdtyP2D6SLlh8zBaZ0cVkwfrwhqzIU9VCfJT00CLVP5t+HAiYg" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/themes/folio/galleria.folio.min.js" integrity="sha384-DwpKI+deZB267+hPKwiOIc5Y2GKsVL0mR6hgz7GgIu7AgAMYqJwcJKY1YBNfhWcY" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@8.13.5/dist/mermaid.min.js" integrity="sha384-0yWn54pSGtfKCU+skfA69l25VsCw+MZt4LQov3xNRoS7YkAMrFokGgSBnAWSK4pv" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1.1.13/dist/chart.xkcd.min.js" integrity="sha384-xC3h1+IHXK8seA+8KfT79Z4e0GPsznjXBoMa5nd8ooWKplPyXx92NOmljWxLC/cs" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://macromogic.xyz/elasticlunr.min.js"></script>
+  <script src="https://macromogic.xyz/search_index.en.js"></script><script src="https://macromogic.xyz/js/site.js"></script>
+
+  
+
+
+
+
+
+  
+  
+</body>
+
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  <link href='&#x2F;icons&#x2F;site.webmanifest' rel="manifest" />
+  
+  
+  <link color="#5bbad5" href='&#x2F;icons&#x2F;safari-pinned-tab.svg' rel="mask-icon" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-16x16.png' rel="icon" sizes="16x16" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-32x32.png' rel="icon" sizes="32x32" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;apple-touch-icon.png' rel="apple-touch-icon" sizes="180x180" />
+  
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/themes/folio/galleria.folio.min.css" integrity="sha384-+rY0QD+LRnTOquDMzGa9lXU6jIwdiQuwCJQ2cdcW0qeP/0UbjQCZlXnRsUMA+9pH" crossorigin="anonymous">
+  
+
+  
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.1/css/academicons.min.css" integrity="sha384-FIue+PI4SsI9XfHCz8dBLg33b0c1fMJgNU3X//L26FYbGnlSEfWmNT7zgWc2N9b6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link href="https://macromogic.xyz/deep-thought.css" rel="stylesheet" />
+  
+  
+
+  <title>
+    
+Macromogic | 算法复习笔记：贪心求最优Caching策略
+
+  </title>
+
+  
+  
+  
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+  
+  
+</head>
+
+<body class="has-background-white">
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item is-size-5 has-text-weight-bold" href="https:&#x2F;&#x2F;macromogic.xyz">Macromogic</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;">
+            Home
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;posts">
+            Posts
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;tags">
+            Tags
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;categories">
+            Categories
+          </a>
+          
+          
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title">
+            算法复习笔记：贪心求最优Caching策略
+          </h1>
+          <p class="subtitle"></p>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="fas fa-user"></i>
+  </span>
+  <span>Weijie Huang published on</span>
+  <span class="icon">
+    <i class="far fa-calendar-alt"></i>
+  </span>
+  <span><time datetime="2020-06-15">June 15, 2020</time></span>
+</span>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="far fa-clock"></i>
+  </span>
+  <span>9 min,</span>
+  <span class="icon">
+    <i class="fas fa-pencil-alt"></i>
+  </span>
+  <span>1737 words</span>
+</span>
+
+            </div>
+            <div class="column">
+              
+              
+<p>
+  Categories:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/categories/notes/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-cube"></i>
+      </span>
+      <span>Notes</span>
+    </span>
+  </a>
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/categories/legacy/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-cube"></i>
+      </span>
+      <span>Legacy</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+<p>
+  Tags:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/tags/algorithm/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>Algorithm</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <p>题目来自Algorithm design / Jon Kleinberg, Eva Tardos.—1st ed. 的4.3节。</p>
+<p>参考文章：<a href="http://notebook.xyli.me/CS161/Intro-to-greedy-algo1/">http://notebook.xyli.me/CS161/Intro-to-greedy-algo1/</a></p>
+<h2 id="wen-ti-bei-jing">问题背景</h2>
+<p>假设现在有一个容量为$k$的缓存（cache）空间，和$m$个内存block访问请求$d_1, d_2, \dots, d_m$。对于第$i$个请求$d_i$，如果请求的block在缓存中，称其为一次<strong>命中</strong>（hit），否则称其为一次<strong>失效/缺页</strong>（miss）。若出现miss，则需要从内存中读取该block并写入缓存（若缓存已满则会替换掉其中一个block）。现给定请求序列，求一个最优缓存（caching）策略使得miss尽可能少。</p>
+<span id="continue-reading"></span><h2 id="farthest-in-future-ff-suan-fa">Farthest-in-Future（FF）算法</h2>
+<h3 id="suan-fa-nei-rong">算法内容</h3>
+<p>该算法的核心是，当$d_i$需要被读取进内存时，将<strong>未来（首次）最晚出现</strong>（farthest in the future）的block替换掉。</p>
+<p>例如：缓存内容为${a, b, c, d, e, f}$，请求队列为$g, a, b, c, e, d, a, c, d, e, f, a, \dots$，当请求$g$发生缺页时，缓存中$f$在队列中首次最晚出现，因此将$f$替换成$g$。</p>
+<p>下面证明该算法的正确性。</p>
+<h3 id="jian-hua-diao-du">简化调度</h3>
+<p>首先引入一个新概念：<strong>简化调度</strong>（Reduced schedule）。简化调度的内容是，仅当某block被请求时才将其写入缓存。</p>
+<p><img src="/images/reduced_schedule.png" alt="" /></p>
+<blockquote>
+<p>任何非简化调度（Non-reduced schedule）$S$可以在**不增加miss次数***的情况下转化成简化调度$S’$。</p>
+</blockquote>
+<p><strong>*</strong>：在非简化调度中，请求失败之外的block写入也被视为一次miss（即换页，需要耗费大量时间从内存中读取数据）。</p>
+<p>考虑某非简化调度$S$，假设$S$在$t$时刻向内存中写入$d$，但没有发生对$d$的请求，则对于某时刻$t’ &gt; t$，有以下两种情况：</p>
+<ol>
+<li>写入$d$后没收到对$d$的请求，而是在$t'$时刻收到了对另外一个不在内存中的block（记作$e$）的请求。此时省去$d$的写入，可减少1次miss。</li>
+<li>写入$d$后在$t'$时刻收到了对$d$的请求。此时将写入$d$的操作移至$t'$时刻，miss数不变。</li>
+</ol>
+<p><img src="/images/schedule_transformation.png" alt="" /></p>
+<p>综上，$S$可以转化成某简化调度$S’$，且miss总数不增加。</p>
+<h3 id="ffsuan-fa-de-zui-you-xing">FF算法的最优性</h3>
+<p>由上述讨论知，<strong>存在最优调度策略，其同时也是简化调度</strong>。假设某最优调度策略不是简化策略，可以将该策略转化为简化调度，且miss数不增加，则转化后的策略也是最优调度策略（称其为<strong>最优简化调度</strong>）。</p>
+<p>下面证明以下定理（暂且称其为<strong>FF最优性定理</strong>）：</p>
+<blockquote>
+<p>Farthest-in-Future算法得出的策略$S_\text{FF}$是<strong>最优策略</strong>。</p>
+</blockquote>
+<p>要证明该定理，我们只需证明（暂且称为<strong>FF前缀最优定理</strong>）：</p>
+<blockquote>
+<p>对任意非负整数$n$，存在某最优简化调度$S^*$，使得其前$n$个请求的调度策略和$S_\text{FF}$相同。</p>
+</blockquote>
+<p>用<strong>数学归纳法</strong>进行证明：</p>
+<ul>
+<li>
+<p>$n=0$时，该命题显然成立。</p>
+</li>
+<li>
+<p>$n = j(j \geq 0)$时，假设该命题成立，即存在某最优简化调度$S^<em><em>j$满足前$j$个请求的调度策略与$S</em>\text{FF}$相同，下面尝试构造使命题成立的$S^</em>_{j+1}$：</p>
+<p>考虑第$j+1$个请求$d_{j+1}$，有以下若干种情况：</p>
+<ol>
+<li>
+<p>$d_{j+1}$在缓存中，此时$S^<em>_{j+1} = S^</em><em>j$不做操作，显然和$S</em>\text{FF}$的前$j+1$个策略相同。</p>
+</li>
+<li>
+<p>$d_{j+1}$不在缓存中，且$S^<em><em>j$和$S</em>\text{FF}$替换掉相同的block，则$S^</em>_{j+1} = S^*<em>j$和$S</em>\text{FF}$的前$j+1$个策略显然相同。</p>
+</li>
+<li>
+<p>$d_{j+1}$不在缓存中，$S_\text{FF}$替换掉$e$，$S^<em><em>j$替换掉$f$且$f \neq e$，下面需证明$S</em>\text{FF}$的策略**不比$S^</em>_j$差**：</p>
+<p>构造$\tilde S^<em>_{j+1}$使得前$j$个请求的调度与$S^</em><em>j$相同、第$j+1$个请求和$S</em>\text{FF}$相同，假设$k$时刻（$k &gt; j+1$）$\tilde S^<em>_{j+1}$和$S^</em><em>j$第一次执行不同操作，对应请求为$d_k$。下图为此时两种策略分别对应的缓存状态（$d</em>{j+1}$可能被同时替换成其它block）：</p>
+<p><img src="/images/cache1.png" alt="" /></p>
+<ol>
+<li>若$d_k = e$，容易推出此时$f$没有出现。由于$S_\text{FF}$在第$j+1$个请求时替换了$e$，则$e$一定比$f$更晚出现，产生矛盾。</li>
+<li>若$d_k = f$，此时$f$不在$S^<em>_j$对应的内存中，令$e’$为$S^</em>_j$替换的block：
+<ul>
+<li>若$e’ = e$，此时$\tilde S^*_{j+1}$直接从缓存中读取$f$，二者缓存内容相同。</li>
+<li>若$e’ \neq e$，令$\tilde S^<em>_{j+1}$将$e’$替换成$e$，使二者缓存内容相同。**此时$\tilde S^</em><em>{j+1}$不是简化调度，但可以由上述讨论在不增加miss数的前提下转化成简化调度，并且满足前$j+1$步与$S</em>\text{FF}$相同****。</li>
+</ul>
+</li>
+<li>若$d_k \neq e$且$d_k \neq f$，由于$\tilde S^<em>_{j+1}$和$S^</em>_j$执行不同操作，此时$S^<em>_j$必然替换$e$。令$\tilde S^</em>_{j+1}$替换$f$，则二者缓存内容再次相同。</li>
+</ol>
+</li>
+</ol>
+<p>综上，可以构造出$S^<em>_{j+1} = \tilde S^</em>_{j+1}$使命题在$n = j+1$时成立。</p>
+</li>
+</ul>
+<p><strong>**</strong>：人为添加一次替换后，$\tilde S^<em>_{j+1}$在$k$时刻视为出现一次miss，和$S^</em>_j$在$k$时刻的请求结果相同；又因为除$k$时刻、$j+1$时刻外二者行为一致，显然<strong>二者miss数相等</strong>。此外，为了符号表示方便，转化后的简化调度仍然记作$\tilde S^*_{j+1}$。</p>
+<p>现在FF最优性定理的证明变得平凡：只需令$n = m$，命题显然成立。</p>
+<h2 id="hou-ji">后记</h2>
+<p>在看这个算法的证明时我陷入了两个误区：一是在<strong>简化调度</strong>部分没有正确理解“不增加miss数”的含义：在实际的CPU中，换页操作相对于缓存读取是很耗时的，因此现实中的缓存调度采取的也是简化调度的策略以减少不必要的时间开销。二是在所谓“<strong>FF前缀最优定理</strong>”的证明中，认为非简化调度$\tilde S^<em>_{j+1}$的情形下miss数被人为增加从而破坏了最优性：实际上由$\tilde S^</em>_{j+1}$的完整构造过程分析，最优性是得到了保证的。这两个误区我分别添加了星号注解。</p>
+<p>这个问题的分析和证明过程恰好反映出贪心算法分析的三大法则：</p>
+<ol>
+<li>证明贪心结果不比其它算法差；</li>
+<li>最优结果的性质，贪心结果同样满足；</li>
+<li>能够在不使答案“变差”的前提下将其它答案转化成贪心答案。</li>
+</ol>
+<p>这道题目对于贪心算法的学习还是颇具意义的，虽然记完这个笔记我还是没学会就是了。嗯。</p>
+
+          </div>
+        </article>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Search</p>
+      </header>
+      <section class="modal-card-body">
+        <div class="field mb-2">
+          <div class="control">
+            <input class="input" id="search" placeholder="Search this website." type="search" />
+          </div>
+        </div>
+        <div class="search-results">
+          <div class="search-results__items"></div>
+        </div>
+      </section>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+              
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;posts&#x2F;plug-dp&#x2F;">
+              <span class="icon mr-2">
+                <i class="fas fa-arrow-circle-left"></i>
+              </span>
+              码农的自我修养——插头DP
+            </a>
+          </div>
+           
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;posts&#x2F;fft&#x2F;">
+              算法复习笔记：多项式凭什么能FFT？<span class="icon ml-2">
+                <i class="fas fa-arrow-circle-right"></i>
+              </span>
+            </a>
+          </div>
+          
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+  
+  <footer class="footer py-4">
+    <div class="content has-text-centered">
+      <p>
+        Built with
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-code"></i>
+          </span>
+          <span>code</span>
+        </span>
+        and
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-heart"></i>
+          </span>
+          <span>love</span>
+        </span>
+      </p>
+      <p>
+        Powered by
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-power-off"></i>
+          </span>
+          <span>zola</span>
+        </span>
+      </p>
+    </div>
+  </footer>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/galleria.min.js" integrity="sha384-QSfwGT8/EU536DKdtyP2D6SLlh8zBaZ0cVkwfrwhqzIU9VCfJT00CLVP5t+HAiYg" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/themes/folio/galleria.folio.min.js" integrity="sha384-DwpKI+deZB267+hPKwiOIc5Y2GKsVL0mR6hgz7GgIu7AgAMYqJwcJKY1YBNfhWcY" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@8.13.5/dist/mermaid.min.js" integrity="sha384-0yWn54pSGtfKCU+skfA69l25VsCw+MZt4LQov3xNRoS7YkAMrFokGgSBnAWSK4pv" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1.1.13/dist/chart.xkcd.min.js" integrity="sha384-xC3h1+IHXK8seA+8KfT79Z4e0GPsznjXBoMa5nd8ooWKplPyXx92NOmljWxLC/cs" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://macromogic.xyz/elasticlunr.min.js"></script>
+  <script src="https://macromogic.xyz/search_index.en.js"></script><script src="https://macromogic.xyz/js/site.js"></script>
+
+  
+
+
+
+
+
+  
+  
+</body>
+
+</html>

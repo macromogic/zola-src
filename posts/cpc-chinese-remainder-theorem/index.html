@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  <link href='&#x2F;icons&#x2F;site.webmanifest' rel="manifest" />
+  
+  
+  <link color="#5bbad5" href='&#x2F;icons&#x2F;safari-pinned-tab.svg' rel="mask-icon" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-16x16.png' rel="icon" sizes="16x16" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-32x32.png' rel="icon" sizes="32x32" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;apple-touch-icon.png' rel="apple-touch-icon" sizes="180x180" />
+  
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/themes/folio/galleria.folio.min.css" integrity="sha384-+rY0QD+LRnTOquDMzGa9lXU6jIwdiQuwCJQ2cdcW0qeP/0UbjQCZlXnRsUMA+9pH" crossorigin="anonymous">
+  
+
+  
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.1/css/academicons.min.css" integrity="sha384-FIue+PI4SsI9XfHCz8dBLg33b0c1fMJgNU3X//L26FYbGnlSEfWmNT7zgWc2N9b6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link href="https://macromogic.xyz/deep-thought.css" rel="stylesheet" />
+  
+  
+
+  <title>
+    
+Macromogic | CPC算法笔记——中国剩余定理
+
+  </title>
+
+  
+  
+  
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+  
+  
+</head>
+
+<body class="has-background-white">
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item is-size-5 has-text-weight-bold" href="https:&#x2F;&#x2F;macromogic.xyz">Macromogic</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;">
+            Home
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;posts">
+            Posts
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;tags">
+            Tags
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;categories">
+            Categories
+          </a>
+          
+          
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title">
+            CPC算法笔记——中国剩余定理
+          </h1>
+          <p class="subtitle"></p>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="fas fa-user"></i>
+  </span>
+  <span>Weijie Huang published on</span>
+  <span class="icon">
+    <i class="far fa-calendar-alt"></i>
+  </span>
+  <span><time datetime="2019-08-22">August 22, 2019</time></span>
+</span>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="far fa-clock"></i>
+  </span>
+  <span>4 min,</span>
+  <span class="icon">
+    <i class="fas fa-pencil-alt"></i>
+  </span>
+  <span>762 words</span>
+</span>
+
+            </div>
+            <div class="column">
+              
+              
+<p>
+  Categories:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/categories/notes/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-cube"></i>
+      </span>
+      <span>Notes</span>
+    </span>
+  </a>
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/categories/legacy/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-cube"></i>
+      </span>
+      <span>Legacy</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+<p>
+  Tags:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/tags/math/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>Math</span>
+    </span>
+  </a>
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://macromogic.xyz/tags/cpc/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>CPC</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <p>中国剩余定理可用于解一元线性方程组：
+$$
+\begin{cases}
+x \equiv a_1 \pmod {m_1} \
+x \equiv a_2 \pmod {m_2} \
+\quad \vdots \
+x \equiv a_n \pmod {m_n}
+\end{cases}
+$$</p>
+<span id="continue-reading"></span><h2 id="mo-shu-liang-liang-hu-zhi-de-qing-xing">模数两两互质的情形</h2>
+<p>令$M = \prod\limits_{i=1}^{n} m_i,\ M_i = \frac{M}{m_i},\ t_i = M_i^{-1}$（模$m_i$意义下），则可构造通解：
+$$
+x_S = \sum_{i=1}^{n} a_it_iM_i + kM,\ k \in \mathbb{Z}
+$$
+<strong>证明</strong></p>
+<p>由假设，$\forall j \in {1, 2, \dots, n},\ \gcd(m_i, M_i) = 1$，则由Bezout定理可推知，$\exists t_i \text{ s.t. } t_iM_i \equiv 1 \pmod {m_i}$，即$M_i$存在模$m_i$意义下的数论倒数$t_i$。</p>
+<p>考虑乘积$a_it_iM_i$可知：$a_it_iM_i \equiv a_i \pmod {m_i};\ $$a_jt_jM_j \equiv 0 \pmod {m_i}, $$\forall j \in {1, 2, \dots, n}, j \neq i$，所以令$x = \sum\limits_{i=1}^{n} a_it_iM_i$，则有$x \equiv a_i \pmod {m_i}, \forall i \in {1, 2, \dots, n}$。</p>
+<p>假设$x_1, x_2$为该方程的两个解，由于模数两两互质，有$M \mid (x_1-x_2)$，即任意两个整数解必然相差$M$的整数倍，故解集为${\sum\limits_{i=1}^{n} a_it_iM_i + kM \mid k \in \mathbb{Z}}$。</p>
+<h2 id="mo-shu-bu-liang-liang-hu-zhi-de-qing-xing">模数不两两互质的情形</h2>
+<h3 id="fang-fa-yi-zhuan-hua-wei-mo-shu-hu-zhi-1">方法一：转化为模数互质<a href="https://macromogic.xyz/posts/cpc-chinese-remainder-theorem/#refer-1"><sup>[1]</sup></a></h3>
+<p>先提出以下引理：</p>
+<p><strong>引理1</strong> 方程组有解的充要条件是$\forall i, j \in {1, 2, \dots, n}, i \neq j,\ $$\gcd(m_i, m_j) \mid (b_i-b_j)$。</p>
+<p><strong>证明</strong></p>
+<p>考虑将
+$$
+\begin{cases}
+x \equiv a_1 \pmod {m_1} \
+x \equiv a_2 \pmod {m_2}
+\end{cases}
+$$
+转化为不定方程组：
+$$
+\begin{cases}
+x = pm_1 + a_1 \
+x = qm_2 + a_2
+\end{cases}
+$$
+两式相减得：
+$$
+pm_1 - qm_2 = a_1 - a_2
+$$
+若方程有解，由Bezout定理知，$\gcd(m_i, m_j) \mid (a_i - a_j)$，以此类推可证必要性。充分性同理。</p>
+<p><strong>引理2</strong> 设$m$为正整数，对其质因数分解得$m = \prod\limits_{i=1}^{\alpha} p_i^{e_i}$，则方程$x \equiv a \pmod m$等价于方程组
+$$
+\begin{cases}
+x \equiv a \pmod {p_1^{e_1}} \
+x \equiv a \pmod {p_2^{e_2}} \
+\quad \vdots \
+x \equiv a \pmod {p_\alpha^{e_\alpha}}
+\end{cases}
+$$
+<strong>结论显然，证明略</strong></p>
+<p><strong>引理3</strong> 设$p$为质数，$\alpha \geq \beta$，则方程组
+$$
+\begin{cases}
+x \equiv a_1 \pmod {p^\alpha} \
+x \equiv a_2 \pmod {p^\beta}
+\end{cases}
+$$
+的解就是方程$x \equiv a_1 \pmod {p^\alpha}$的解，即在有解的条件下二者等价。</p>
+<p><strong>证明</strong></p>
+<p>若方程组有解，则$\exists k, l$使得：
+$$
+\begin{align*}
+x = a_1 + kp^\alpha &amp;= a_1 + (kp^{\alpha-\beta})p^\beta \
+&amp;= a_2 + lp^\beta
+\end{align*}
+$$
+即
+$$
+a_1 \equiv a_2 \pmod p
+$$
+故原方程组可写成：
+$$
+\begin{cases}
+x \equiv a_1 \pmod {p^\alpha} \
+x \equiv a_1 \pmod {p^\beta}
+\end{cases}
+$$
+该方程组的解显然是$x \equiv a_1 \pmod {p^\alpha}$的解，即二者等价。</p>
+<hr />
+<p>利用以上三个引理，可以将原方程组转化为模数为素数乘方的方程组，若不存在矛盾的方程，则可用中国剩余定理求解。</p>
+<h3 id="fang-fa-er-liang-liang-he-bing-fa">方法二：两两合并法</h3>
+<p>由<strong>引理1</strong>的证明，若方程组有解，对前两个方程，可由扩展Euclid算法解得$p, q$使得$pm_1 - qm_2 = a_1 - a_2$，则两个方程等价于
+$$
+x \equiv pm_1+a_1 \pmod {\mathrm{lcm}(m_1, m_2)}
+$$
+或
+$$
+x \equiv qm_2+a_2 \pmod {\mathrm{lcm}(m_1, m_2)}
+$$
+以此类推。</p>
+<h2 id="can-kao-wen-xian">参考文献</h2>
+<div id="refer-1">[1]<a href="http://www.cnki.com.cn/Article/CJFDTotal-GLKX201003013.htm">刘古胜,徐东星,余畅.推广的孙子定理[J].高师理科学刊,2010,30(03):26-28. </a></div>
+
+          </div>
+        </article>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Search</p>
+      </header>
+      <section class="modal-card-body">
+        <div class="field mb-2">
+          <div class="control">
+            <input class="input" id="search" placeholder="Search this website." type="search" />
+          </div>
+        </div>
+        <div class="search-results">
+          <div class="search-results__items"></div>
+        </div>
+      </section>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+               
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;macromogic.xyz&#x2F;posts&#x2F;cpc-polya&#x2F;">
+              CPC算法笔记——置换和Polya定理<span class="icon ml-2">
+                <i class="fas fa-arrow-circle-right"></i>
+              </span>
+            </a>
+          </div>
+          
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+  
+  <footer class="footer py-4">
+    <div class="content has-text-centered">
+      <p>
+        Built with
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-code"></i>
+          </span>
+          <span>code</span>
+        </span>
+        and
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-heart"></i>
+          </span>
+          <span>love</span>
+        </span>
+      </p>
+      <p>
+        Powered by
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-power-off"></i>
+          </span>
+          <span>zola</span>
+        </span>
+      </p>
+    </div>
+  </footer>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/galleria.min.js" integrity="sha384-QSfwGT8/EU536DKdtyP2D6SLlh8zBaZ0cVkwfrwhqzIU9VCfJT00CLVP5t+HAiYg" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/galleria@1.6.1/dist/themes/folio/galleria.folio.min.js" integrity="sha384-DwpKI+deZB267+hPKwiOIc5Y2GKsVL0mR6hgz7GgIu7AgAMYqJwcJKY1YBNfhWcY" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@8.13.5/dist/mermaid.min.js" integrity="sha384-0yWn54pSGtfKCU+skfA69l25VsCw+MZt4LQov3xNRoS7YkAMrFokGgSBnAWSK4pv" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1.1.13/dist/chart.xkcd.min.js" integrity="sha384-xC3h1+IHXK8seA+8KfT79Z4e0GPsznjXBoMa5nd8ooWKplPyXx92NOmljWxLC/cs" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://macromogic.xyz/elasticlunr.min.js"></script>
+  <script src="https://macromogic.xyz/search_index.en.js"></script><script src="https://macromogic.xyz/js/site.js"></script>
+
+  
+
+
+
+
+
+  
+  
+</body>
+
+</html>
