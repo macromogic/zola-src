@@ -9,15 +9,21 @@ tags = ["Math", "CPC"]
 
 ## 置换
 
-**置换**即$[\![1, n]\!] \triangleq \{1, 2, \dots, n\}$到自身的1-1变换：$[\![1, n]\!] \rightarrow [\![1, n]\!]$
+**置换**即$[\\![1, n]\\!] \triangleq \\{1, 2, \dots, n\\}$到自身的1-1变换：$[\\![1, n]\\!] \rightarrow [\\![1, n]\\!]$
 
 $p: i \rightarrow a_i, (a_i \neq a_j, i \neq j)$，
 
-其中$a_1, a_2, \dots, a_n$是$[\![1, n]\!]$的一个**全排列**，
+其中$a_1, a_2, \dots, a_n$是$[\\![1, n]\\!]$的一个**全排列**，
 
 称此置换为$n$阶置换，记为：
 
-$p=\pmatrix{1&2&\cdots&n\\a_1&a_2&\cdots&a_n}$
+$$
+p = \left(
+\begin{matrix}
+    1 & 2 & \cdots & n \\\\
+    a_1 & a_2 & \cdots & a_n
+\end{matrix} \right)
+$$
 
 $n$阶置换共有$n!$个。
 
@@ -27,23 +33,71 @@ $n$阶置换共有$n!$个。
 
 定义$p_1p_2$表示**先做$p_1$的置换，再做$p_2$的置换**，如：
 
-$p_1=\pmatrix{1&2&3&4\\3&1&2&4}, p_2=\pmatrix{1&2&3&4\\4&3&2&1}$
+$$
+p_1= \left(
+\begin{matrix}1&2&3&4\\\\3&1&2&4
+\end{matrix} \right)
+,\ 
+p_2= \left(
+\begin{matrix}1&2&3&4\\\\4&3&2&1
+\end{matrix} \right)
+$$
 
 则
 
-$p_1p_2=\pmatrix{1&2&3&4\\3&1&2&4}\cdot\pmatrix{1&2&3&4\\4&3&2&1}=\pmatrix{1&2&3&4\\3&1&2&4}\cdot\pmatrix{3&1&2&4\\2&4&3&1}=\pmatrix{1&2&3&4\\2&4&3&1}$
+$$
+\begin{align*}
+p_1p_2&= \left(
+\begin{matrix}
+1&2&3&4\\\\3&1&2&4
+\end{matrix} \right)
+\cdot
+\left( \begin{matrix}
+1&2&3&4\\\\4&3&2&1
+\end{matrix} \right) \\\\
+&=
+\left( \begin{matrix}
+1&2&3&4\\\\3&1&2&4
+\end{matrix} \right)
+\cdot
+\left( \begin{matrix}
+3&1&2&4\\\\2&4&3&1
+\end{matrix} \right) \\\\
+&=
+\left( \begin{matrix}
+1&2&3&4\\\\2&4&3&1
+\end{matrix} \right)
+\end{align*}
+$$
 
 即
 
-$p_1=\pmatrix{1&2&\cdots&n\\a_1&a_2&\cdots&a_n}$
+$$
+p_1=
+\left( \begin{matrix}
+1&2&\cdots&n\\\\a_1&a_2&\cdots&a_n
+\end{matrix} \right)
+$$
 
-$p_2=\pmatrix{1&2&\cdots&n\\b_1&b_2&\cdots&b_n}=\pmatrix{a_1&a_2&\cdots&a_n\\b_1(a_1)&b_2(a_2)&\cdots&c_n(a_n)}$
+$$
+p_2=
+\left( \begin{matrix}
+1&2&\cdots&n\\\\b_1&b_2&\cdots&b_n
+\end{matrix} \right)
+= \left( \begin{matrix}
+a_1&a_2&\cdots&a_n\\\\b_1(a_1)&b_2(a_2)&\cdots&c_n(a_n)
+\end{matrix} \right)
+$$
 
-$\therefore p_1p_2=\pmatrix{1&2&\cdots&n\\b_1(a_1)&b_2(a_2)&\cdots&b_n(a_n)}$
+$$\therefore p_1p_2=
+\left( \begin{matrix}1&2&\cdots&n\\\\b_1(a_1)&b_2(a_2)&\cdots&b_n(a_n)\end{matrix} \right)$$
 
 ## 置换群
 
-$[\![1, n]\!]$上所有置换按上述乘法构成一个**群**，即满足**封闭性**、**结合律**、**有单位元** $p_1=\pmatrix{1&1&\cdots&1\\ 1&1&\cdots&1}$、**有逆元** $p^{-1}=\pmatrix{a_1&a_2&\cdots&a_n\\1&2&\cdots&n}$，我们称此群为**n个对象的对称群**，记为$S_n$。
+$[\\![1, n]\\!]$上所有置换按上述乘法构成一个**群**，即满足**封闭性**、**结合律**、**有单位元**、**有逆元**：
+$$p_1=\left( \begin{matrix}1&1&\cdots&1\\\\ 1&1&\cdots&1\end{matrix} \right)$$
+$$p^{-1}=\left( \begin{matrix}a_1&a_2&\cdots&a_n\\\\1&2&\cdots&n\end{matrix} \right)$$
+我们称此群为**n个对象的对称群**，记为$S_n$。
 
 $S_n$的任意一个子群称为**置换群**。
 

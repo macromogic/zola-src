@@ -10,9 +10,9 @@ tags = ["Math", "CPC"]
 中国剩余定理可用于解一元线性方程组：
 $$
 \begin{cases}
-x \equiv a_1 \pmod {m_1} \\
-x \equiv a_2 \pmod {m_2} \\
-\quad \vdots \\
+x \equiv a_1 \pmod {m_1}\\\\
+x \equiv a_2 \pmod {m_2}\\\\
+\quad \vdots\\\\
 x \equiv a_n \pmod {m_n}
 \end{cases}
 $$
@@ -47,14 +47,14 @@ $$
 考虑将
 $$
 \begin{cases}
-x \equiv a_1 \pmod {m_1} \\
+x \equiv a_1 \pmod {m_1}\\\\
 x \equiv a_2 \pmod {m_2}
 \end{cases}
 $$
 转化为不定方程组：
 $$
 \begin{cases}
-x = pm_1 + a_1 \\
+x = pm_1 + a_1\\\\
 x = qm_2 + a_2
 \end{cases}
 $$
@@ -67,9 +67,9 @@ $$
 **引理2** 设$m$为正整数，对其质因数分解得$m = \prod\limits_{i=1}^{\alpha} p_i^{e_i}$，则方程$x \equiv a \pmod m$等价于方程组
 $$
 \begin{cases}
-x \equiv a \pmod {p_1^{e_1}} \\
-x \equiv a \pmod {p_2^{e_2}} \\
-\quad \vdots \\
+x \equiv a \pmod {p_1^{e_1}}\\\\
+x \equiv a \pmod {p_2^{e_2}}\\\\
+\quad \vdots\\\\
 x \equiv a \pmod {p_\alpha^{e_\alpha}}
 \end{cases}
 $$
@@ -78,7 +78,7 @@ $$
 **引理3** 设$p$为质数，$\alpha \geq \beta$，则方程组
 $$
 \begin{cases}
-x \equiv a_1 \pmod {p^\alpha} \\
+x \equiv a_1 \pmod {p^\alpha}\\\\
 x \equiv a_2 \pmod {p^\beta}
 \end{cases}
 $$
@@ -89,7 +89,7 @@ $$
 若方程组有解，则$\exists k, l$使得：
 $$
 \begin{align*}
-x = a_1 + kp^\alpha &= a_1 + (kp^{\alpha-\beta})p^\beta \\
+x = a_1 + kp^\alpha &= a_1 + (kp^{\alpha-\beta})p^\beta\\\\
 &= a_2 + lp^\beta
 \end{align*}
 $$
@@ -100,7 +100,7 @@ $$
 故原方程组可写成：
 $$
 \begin{cases}
-x \equiv a_1 \pmod {p^\alpha} \\
+x \equiv a_1 \pmod {p^\alpha}\\\\
 x \equiv a_1 \pmod {p^\beta}
 \end{cases}
 $$

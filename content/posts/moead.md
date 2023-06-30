@@ -31,7 +31,7 @@ BI法同样需要参考向量$\mathbf{z}$和权重向量$\boldsymbol{\lambda}$�
 
 $$
 \begin{align*}
-g^{\mathrm{bi}}(\mathbf{x} \mid \boldsymbol{\lambda}, \mathbf{z}) &= d \\
+g^{\mathrm{bi}}(\mathbf{x} \mid \boldsymbol{\lambda}, \mathbf{z}) &= d\\\\
 \text{s.t. }\ \ \qquad \mathbf{z} - \mathbf{F}(\mathbf{x}) &= d\boldsymbol{\lambda}
 \end{align*}
 $$
@@ -46,7 +46,7 @@ $$
 
 $$
 \begin{align*}
-d_1 &= \frac{\left\lVert (\mathbf{z} - \mathbf{F}(\mathbf{x}))^T \boldsymbol{\lambda} \right\rVert}{\left\lVert \boldsymbol{\lambda} \right\rVert} \\
+d_1 &= \frac{\left\lVert (\mathbf{z} - \mathbf{F}(\mathbf{x}))^T \boldsymbol{\lambda} \right\rVert}{\left\lVert \boldsymbol{\lambda} \right\rVert}\\\\
 d_2 &= \left\lVert \mathbf{F}(\mathbf{x}) - (\mathbf{z} - d_1\boldsymbol{\lambda}) \right\rVert
 \end{align*}
 $$

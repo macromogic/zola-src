@@ -11,7 +11,7 @@ tags = ["Math", "CPC"]
 
 一个整数$x$对另一个整数$p$的**二次剩余**，指$x^2$模$p$的余数。
 
-我们称整数$d$为**模$p$的二次剩余**当且仅当$\exists x \in \mathbb{Z} \mbox{ s.t. } x^2 \equiv d \pmod p$；反之，称$d$为**模$p$的非二次剩余**。
+我们称整数$d$为**模$p$的二次剩余**当且仅当$\exists x \in \mathbb{Z} \text{ s.t. } x^2 \equiv d \pmod p$；反之，称$d$为**模$p$的非二次剩余**。
 
 上下文无歧义的情况下可以简称为**剩余**和**非剩余**。
 
@@ -27,7 +27,7 @@ x^2 \equiv (p-x)^2 \pmod p
 $$
 因此，在$\mathbb{Z}/p\mathbb{Z}$中，模$p$的二次剩余一共有$\frac{p+1}{2}$个，分别是$0^2, 1^2, \dots, (\frac{p-1}{2})^2$。忽略$0$的情形，则模$p$的二次剩余和二次非剩余各有$\frac{p-1}{2}$个。
 
-### Euler准则 / Euler判别法
+### Euler准则 / Euler判别法 { #euler-criterion }
 
 **Euler准则**应用于判断整数$a$是否是素数$p$的二次剩余。
 
@@ -35,9 +35,9 @@ $$
 $$
 \left( \frac{a}{p} \right) = 
 \begin{cases}
-0 ,&  a \equiv 0 \pmod p\\
-1 ,&  a \not \equiv0 \pmod p,\ \exists x \mbox{ s.t. } x^2 \equiv a \pmod p \\
--1 ,& \nexists x \mbox{ s.t. } x^2 \equiv a \pmod p
+0 ,&  a \equiv 0 \pmod p\\\\
+1 ,&  a \not \equiv 0 \pmod p,\ \exists x \text{ s.t. } x^2 \equiv a \pmod p\\\\
+-1 ,& \nexists x \text{ s.t. } x^2 \equiv a \pmod p
 \end{cases}
 $$
 Euler准则的内容是：对$\forall a \in \mathbb{Z}, p \nmid a$：
@@ -70,31 +70,31 @@ $$
 $$
 \left(\frac{-1}{p}\right) = (-1)^{\frac{p-1}{2}} \equiv 
 \begin{cases}
-1,& p \equiv 1 \pmod 4 \\
+1,& p \equiv 1 \pmod 4\\\\
 -1,& p \equiv 3 \pmod 4
-\end{cases} \\
+\end{cases}\\\\
 \left(\frac{2}{p}\right) = (-1)^{\frac{p^2-1}{8}} \equiv 
 \begin{cases}
-1,& p \equiv 1 \mbox{ or } 7 \pmod 8 \\
--1,& p \equiv 3 \mbox{ or } 5 \pmod 8
+1,& p \equiv 1 \text{ or } 7 \pmod 8\\\\
+-1,& p \equiv 3 \text{ or } 5 \pmod 8
 \end{cases}
 $$
 对奇素数$p$，还有以下结论：
 $$
 \left({\frac{3}{p}}\right)=(-1)^{\left\lceil {\frac{p+1}{6}}\right\rceil }=
 {\begin{cases}
-1,& p\equiv 1{\mbox{ or }}11{\pmod{12}}\\
--1,& p\equiv 5{\mbox{ or }}7{\pmod{12}}
-\end{cases}} \\
+1,& p\equiv 1{\text{ or }}11{\pmod{12}}\\\\
+-1,& p\equiv 5{\text{ or }}7{\pmod{12}}
+\end{cases}}\\\\
 \left({\frac{5}{p}}\right)=(-1)^{\left\lfloor {\frac{p-2}{5}}\right\rfloor }=
 {\begin{cases}
-1,& p\equiv 1{\mbox{ or }}4{\pmod 5}\\
--1,& p\equiv 2{\mbox{ or }}3{\pmod 5}
-\end{cases}} \\
+1,& p\equiv 1{\text{ or }}4{\pmod 5}\\\\
+-1,& p\equiv 2{\text{ or }}3{\pmod 5}
+\end{cases}}\\\\
 \left({\frac {7}{p}}\right)=
 \begin{cases}
-1,& p\equiv 1,3,9,19,25,{\mbox{ or }}27{\pmod {28}}\\
--1,& p\equiv 5,11,13,15,17,{\mbox{ or }}23{\pmod {28}}
+1,& p\equiv 1,3,9,19,25,{\text{or }}27{\pmod {28}}\\\\
+-1,& p\equiv 5,11,13,15,17,{\text{or }}23{\pmod {28}}
 \end{cases}
 $$
 
@@ -108,26 +108,26 @@ $$
 
 > 首先观察到以下结论：
 > $$
-> \binom{p}{i} \equiv 0 \pmod p,\ i = 1, 2, \dots, p-1 \\
-> a^{p-1} \equiv 1 \pmod p \\
+> \binom{p}{i} \equiv 0 \pmod p,\ i = 1, 2, \dots, p-1\\\\
+> a^{p-1} \equiv 1 \pmod p\\\\
 > \omega^\frac{p-1}{2} = \left({\frac{\omega}{p}}\right) \equiv -1 \pmod p
 > $$
 > 因此有：
 > $$
 > \begin{align*}
 > (a+\sqrt{\omega})^p 
-> &= a^p + \sum_{i-1}^{p-1} \binom{p}{i}a^i(\sqrt{\omega})^{p-i} + > \omega^{\frac{p-1}{2}}\sqrt{\omega} \\
-> &\equiv a^p + \omega^\frac{p-1}{2} \sqrt{\omega} \pmod p \\ 
+> &= a^p + \sum_{i-1}^{p-1} \binom{p}{i}a^i(\sqrt{\omega})^{p-i} + > \omega^{\frac{p-1}{2}}\sqrt{\omega}\\\\
+> &\equiv a^p + \omega^\frac{p-1}{2} \sqrt{\omega} \pmod p \\\\
 > &\equiv a - \sqrt{\omega} \pmod p
 > \end{align*}
 > $$
 > 所以
 > $$
 > \begin{align*}
-> x^2 &= (a+\sqrt{\omega})^{p+1} \\
-> &= (a+\sqrt{\omega})^p(a+\sqrt{\omega}) \\
-> &\equiv (a-\sqrt{\omega})(a+\sqrt{\omega}) \pmod p \\
-> &\equiv a^2 - (a^2-d) \pmod p \\
+> x^2 &= (a+\sqrt{\omega})^{p+1}\\\\
+> &= (a+\sqrt{\omega})^p(a+\sqrt{\omega})\\\\
+> &\equiv (a-\sqrt{\omega})(a+\sqrt{\omega}) \pmod p\\\\
+> &\equiv a^2 - (a^2-d) \pmod p\\\\
 > &\equiv d \pmod p
 > \end{align*}
 > $$
@@ -161,7 +161,7 @@ $$
   - $k$为奇数时不是二次剩余；
   - $k$为偶数时是二次剩余当且仅当$a$是二次剩余。
 
-模$p^k$意义下的二次剩余和非二次剩余的行为遵循和模$p$意义下相同的规则（见[Euler准则](#Euler准则 / Euler判别法)部分），而$p$不是$p^{2k+1}$的二次剩余，上述结论显然易得。
+模$p^k$意义下的二次剩余和非二次剩余的行为遵循和模$p$意义下相同的规则（见[Euler准则](#euler-criterion)部分），而$p$不是$p^{2k+1}$的二次剩余，上述结论显然易得。
 
 ## 合数的二次剩余
 
@@ -183,4 +183,4 @@ $$
 - $2 \times 8 \equiv 1 \pmod {15}$，结果为二次剩余；
 - $2 \times 7 \equiv 14 \pmod {15}$，结果为非二次剩余。
 
-这个现象可以从抽象代数的角度解释：$\mathbb{Z}/m\mathbb{Z}$中所有和模$m$互质的同余类构成一个乘法群，称作$\mathbb{Z}/m\mathbb{Z}$上的**可逆元群**$(\mathbb{Z}/m\mathbb{Z})^*$；这些同余类的平方可构成可逆元群的子群$H$。不同的非剩余可能属于不同的陪集，也不存在一个简单的法则来判断其属于哪一个陪集。特殊地，$m$为质数时，$(\mathbb{Z}/m\mathbb{Z})^*$除去子群$H$后只剩下一个陪集，故有特殊结论成立。
+这个现象可以从抽象代数的角度解释：$\mathbb{Z}/m\mathbb{Z}$中所有和模$m$互质的同余类构成一个乘法群，称作$\mathbb{Z}/m\mathbb{Z}$上的**可逆元群**$(\mathbb{Z}/m\mathbb{Z})^\*$；这些同余类的平方可构成可逆元群的子群$H$。不同的非剩余可能属于不同的陪集，也不存在一个简单的法则来判断其属于哪一个陪集。特殊地，$m$为质数时，$(\mathbb{Z}/m\mathbb{Z})^\*$除去子群$H$后只剩下一个陪集，故有特殊结论成立。

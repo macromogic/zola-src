@@ -19,21 +19,21 @@ tags = ["Algorithm", "Evolutionary Computation"]
 
 $$
 \begin{align*}
-x_1 &= a_{n-1} \cdot 2^{n-1} + a_{n-2} \cdot 2^{n-2} + \dots + a_1 \cdot 2 + a_0 \\
+x_1 &= a_{n-1} \cdot 2^{n-1} + a_{n-2} \cdot 2^{n-2} + \dots + a_1 \cdot 2 + a_0\\\\
 x_2 &= b_{n-1} \cdot 2^{n-1} + b_{n-2} \cdot 2^{n-2} + \dots + b_1 \cdot 2 + b_0
 \end{align*}
 $$
 设交叉发生在第$k$位，则上式可以简写成：
 $$
 \begin{align*}
-x_1 &= A_1 \cdot 2^k + A_0 \\
+x_1 &= A_1 \cdot 2^k + A_0\\\\
 x_2 &= B_1 \cdot 2^k + B_0
 \end{align*}
 $$
 由这两个个体，我们可以得到两个子代个体：
 $$
 \begin{align*}
-y_1 &= A_1 \cdot 2^k + B_0 \\
+y_1 &= A_1 \cdot 2^k + B_0\\\\
 y_2 &= B_1 \cdot 2^k + A_0
 \end{align*}
 $$
@@ -48,21 +48,21 @@ $$
 在实数域上，要想达成模拟01交叉的特点，我们首先要讲实数和01串建立联系。假设存在这样一个线性映射：
 $$
 \begin{align*}
-p_i &= mx_i + t \\
+p_i &= mx_i + t\\\\
 c_i &= my_i + t
 \end{align*}
 $$
 我们可以利用该映射将原本01编码的亲代$x_1, x_2$和子代$y_1, y_2$映射成实数$p_1, p_2$以及$c_1, c_2$。由该映射的线性性，扩张因子这个概念可以很自然地推广到实数编码上。因此我们可以用下式来进行交叉操作：
 $$
 \begin{align*}
-c_1 &= 0.5[(1 + \beta) p_1 + (1 - \beta) p_2] \\
+c_1 &= 0.5[(1 + \beta) p_1 + (1 - \beta) p_2]\\\\
 c_2 &= 0.5[(1 - \beta) p_1 + (1 + \beta) p_2]
 \end{align*}
 $$
 不难验证该交叉满足式中的扩张因子$\beta$。$\beta$的分布由以下式子来模拟，详细不在这里赘述了：
 $$
 \mathcal{P}(\beta) = \begin{cases}
-0.5(\eta_c + 1)\beta^{\eta_c},& 0 \leq \beta \leq 1 \\
+0.5(\eta_c + 1)\beta^{\eta_c},& 0 \leq \beta \leq 1\\\\
 0.5(\eta_c + 1)\beta^{-(\eta_c + 2)},& \beta > 1
 \end{cases}
 $$
