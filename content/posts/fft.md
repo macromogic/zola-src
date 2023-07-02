@@ -82,7 +82,7 @@ $$
 
 离散情形（可认为在$\mathbb{Z}$上）下的$\delta$函数可视作：
 $$
-\delta[x] = \begin{cases}1,& x = 0 \\0,& x \neq 0 \end{cases}
+\delta[x] = \begin{cases}1,& x = 0 \\\\0,& x \neq 0 \end{cases}
 $$
 **线性时不变系统**（Linear and Time Invariant System，LTIS）可视作某信号处理函数，顾名思义满足以下性质：
 
