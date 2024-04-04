@@ -26,6 +26,8 @@ highlight_code = true
 [extra]
 # Put all your custom variables here
 
+toc = true
+
 katex.enabled = true
 katex.auto_render = true
 
@@ -39,6 +41,7 @@ navbar_items = [
   { url = "$BASE_URL/posts", name = "Posts" },
   { url = "$BASE_URL/tags", name = "Tags" },
   { url = "$BASE_URL/categories", name = "Categories" },
+  { url = "$BASE_URL/pubs", name = "Publications" },
   { url = "$BASE_URL/friends", name = "Friends" },
  ]},
 ]
@@ -57,4 +60,8 @@ name = "Weijie Huang"
 bilibili = "51291249"
 linkedin = "炜杰-黄-94aa11235"
 github = "macromogic"
+gitlab = "macromogic"
 email = "Weijie.Huang@rice.edu"
+discord = "macromogic"
+google_scholar = "L8T5nBEAAAAJ"
+orcid = "0009-0003-6017-0474"
