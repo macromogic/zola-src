@@ -1,0 +1,43 @@
+[
+    {
+        "title": "A Novel Memory Management for RISC-V Enclaves",
+        "authors": [
+            "Haonan Li*",
+            "Weijie Huang*",
+            "Mingde Ren",
+            "Hongyi Lu",
+            "Heming Cui",
+            "Fengwei Zhang"
+        ],
+        "book": "the 10th International Workshop on Hardware and Architectural Support for Security and Privacy (HASP)",
+        "date": "2021-10-18",
+        "comment": "*: Equal contribution",
+        "url": "https://dl.acm.org/doi/abs/10.1145/3505253.3505257"
+    },
+    {
+        "title": "Whole-Program Privilege and Compartmentalization Analysis with the Object-Encapsulation Model",
+        "authors": [
+            "Yudi Yang",
+            "Weijie Huang",
+            "Kelly Kaoudis",
+            "Nathan Dautenhahn"
+        ],
+        "book": "2023 IEEE Symposium on Security and Privacy Workshops (SPW)",
+        "date": "2023-05-25",
+        "url": "https://ieeexplore.ieee.org/abstract/document/10188652/",
+        "code": "https://gitlab.com/fierce-lab/objectencapsulation"
+    },
+    {
+        "title": "Endoprocess: Programmable and Extensible Subprocess Isolation",
+        "date": "2023-09-18",
+        "authors": [
+            "Fangfei Yang",
+            "Weijie Huang",
+            "Kelly Kaoudis",
+            "Anjo Vahldiek-Oberwagner",
+            "Nathan Dautenhahn"
+        ],
+        "book": "the 2023 New Security Paradigms Workshop (NSPW)",
+        "url": "https://dl.acm.org/doi/abs/10.1145/3633500.3633507"
+    }
+]
