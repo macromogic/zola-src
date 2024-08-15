@@ -39,5 +39,19 @@
         ],
         "book": "the 2023 New Security Paradigms Workshop (NSPW)",
         "url": "https://dl.acm.org/doi/abs/10.1145/3633500.3633507"
+    },
+    {
+        "title": "Endokernel: A Thread Safe Monitor for Lightweight Subprocess Isolation",
+        "date": "2024-08-13",
+        "authors": [
+            "Fangfei Yang",
+            "Bumjin Im",
+            "Weijie Huang",
+            "Kelly Kaoudis",
+            "Anjo Vahldiek-Oberwagner",
+            "Chia-Che Tsai",
+            "Nathan Dautenhahn"
+        ],
+        "book": "the 33rd USENIX Security Symposium"
     }
 ]
