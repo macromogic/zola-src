@@ -5,7 +5,7 @@ description = "Code. Study. Live."
 
 Howdy! This is Weijie Huang (黄炜杰, pronounces "*Way-Jee(-eh) Hwahng*").
 
-I am a Ph.D. student in *Computer Science* at [Indiana University Bloomongton](https://bloomington.iu.edu), supervised by [Prof. XiaoFeng Wang](https://homes.luddy.indiana.edu/xw7).
+I am a Ph.D. student in *Computer Science* at [Indiana University Bloomongton](https://bloomington.iu.edu), supervised by [Prof. XiaoFeng Wang](https://wangxiaofeng7.github.io).
 I was previously a Ph.D. student at [Rice University](https://www.rice.edu) with [Dr. Nathan Dautenhahn](https://nathandautenhahn.com) advising me.
 My research focuses on **system security** (*intra-process isolation*, *trusted execution environment*, *virtualization*, *capability model*, etc).
 I am also interested in program analysis, LLM security, and high-performance computing.
