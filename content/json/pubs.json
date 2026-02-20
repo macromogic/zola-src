@@ -54,5 +54,21 @@
         ],
         "book": "the 33rd USENIX Security Symposium",
         "url": "https://www.usenix.org/conference/usenixsecurity24/presentation/yang-fangfei"
+    },
+    {
+        "title": "Large Language Model-Powered Evolutionary Code Optimization on a Phylogenetic Tree",
+        "date": "2026-01-20",
+        "authors": [
+            "Leyi Zhao*",
+            "Weijie Huang*",
+            "Yitong Guo",
+            "Jiang Bian",
+            "Chenghong Wang",
+            "Xuhong Zhang"
+        ],
+        "comment": "*: Equal contribution",
+        "book": "arXiv Preprint",
+        "url": "https://arxiv.org/abs/2601.14523",
+        "code": "https://github.com/annihi1ation/phylo_evolve"
     }
 ]
