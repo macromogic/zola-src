@@ -70,5 +70,32 @@
         "book": "arXiv Preprint",
         "url": "https://arxiv.org/abs/2601.14523",
         "code": "https://github.com/annihi1ation/PhyloEvolve"
+    },
+    {
+        "title": "Hoss: Fast Oblivious Semantic Search with Heterogeneous GPU-CPU-TEE Architecture",
+        "date": "2026-11-15",
+        "authors": [
+            "Jianzhang Du*",
+            "Weijie Huang*",
+            "Chenghong Wang",
+            "Nicolas Tsagareli",
+            "Yukui Luo",
+            "XiaoFeng Wang",
+            "Zhongshu Gu"
+        ],
+        "comment": "*: Equal contribution",
+        "book": "2026 ACM SIGSAC Conference on Computer and Communications Security",
+        "code": "https://github.com/uu60/hoss"
+    },
+    {
+        "title": "Towards Practical Oblivious Relational Analytics with Heterogeneous TEE",
+        "date": "2027-05-17",
+        "authors": [
+            "Weijie Huang",
+            "Chenghong Wang",
+            "XiaoFeng Wang"
+        ],
+        "book": "2027 IEEE Symposium on Security and Privacy (S&P)",
+        "code": "https://github.com/macromogic/velodb"
     }
 ]
